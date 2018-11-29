@@ -18,8 +18,6 @@
  * Admin setttings objects for component 'theme_totara110base'
  *
  * @package   theme-totara110base
- * @author    Eric Bjella <eric.bjella@remote-learne.net>
- * @copyright 2016 Remote Learner  http://www.remote-learner.net/
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

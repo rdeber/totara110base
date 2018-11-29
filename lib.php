@@ -262,15 +262,15 @@ function theme_totara110base_fetch_banner($settings) {
     if (!isset($settings->demomode) || $settings->demomode == 'on') {
         global $OUTPUT;
         $themeimages['sliderimage1'] = $OUTPUT->pix_url('demo-slide1', 'theme');
-        $settings->sliderheader1 = "Welcome to totara110base";
-        $settings->slidertext1 = "totara110base is a modern Moodle® theme designed by Remote-Learner for Remote-Learner clients.";
-        $settings->sliderbuttonlink1 = "http://www.remote-learner.net/welcome-to-totara110base";
+        $settings->sliderheader1 = "Welcome to Totara110base";
+        $settings->slidertext1 = "Custom Totara11 Theme Template";
+        $settings->sliderbuttonlink1 = "#";
         $settings->sliderbuttonlabel1 = "Learn More";
 
         $themeimages['sliderimage2'] = $OUTPUT->pix_url('demo-slide2', 'theme');
-        $settings->sliderheader2 = "Welcome to totara110base";
-        $settings->sliderbuttonlink2 = "http://www.remote-learner.net/totara110base";
-        $settings->slidertext2 = "totara110base is a modern Moodle® theme designed by Remote-Learner for Remote-Learner clients.";
+        $settings->sliderheader2 = "Welcome to Totara110base";
+        $settings->slidertext1 = "Custom Totara11 Theme Template";
+        $settings->sliderbuttonlink2 = "#";
         $settings->sliderbuttonlabel2 = "Learn More";
     }
 
@@ -388,22 +388,22 @@ function theme_totara110base_fetch_subbanner($settings) {
 
     // Set demo settings if demomode is on.
     if (!isset($settings->demomode) || $settings->demomode == 'on') {
-        $settings->subsectiontitle1 = "Explore";
-        $settings->subsectionlink1 = "http://www.remote-learner.net/explore-totara110base";
+        $settings->subsectiontitle1 = "Block 1";
+        $settings->subsectionlink1 = "#";
         $settings->subsectionicon1 = "map-o";
         $settings->subsectiondescription1 = "Explore the features of the totara110base theme.";
         $settings->subsectionlabel1 = "Click Here";
 
-        $settings->subsectiontitle2 = "Customize";
-        $settings->subsectionlink2 = "http://www.remote-learner.net/configure-totara110base";
+        $settings->subsectiontitle2 = "Block 2";
+        $settings->subsectionlink2 = "#";
         $settings->subsectionicon2 = "map-marker";
-        $settings->subsectiondescription2 = "Learn how to customize the totara110base theme.";
+        $settings->subsectiondescription2 = "Explore the features of the totara110base theme.";
         $settings->subsectionlabel2 = "Click Here";
 
-        $settings->subsectiontitle3 = "Innovate";
-        $settings->subsectionlink3 = "http://www.remote-learner.net/gallery/";
+        $settings->subsectiontitle3 = "Block 3";
+        $settings->subsectionlink3 = "#";
         $settings->subsectionicon3 = "map-signs";
-        $settings->subsectiondescription3 = "Find inspiration in the RL themes gallery.";
+        $settings->subsectiondescription3 = "Explore the features of the totara110base theme.";
         $settings->subsectionlabel3 = "Click Here";
     }
 

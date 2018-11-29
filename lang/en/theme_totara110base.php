@@ -27,8 +27,8 @@ $string['pluginname'] = 'Totara110base';
 $string['choosereadme'] = '
 <div class="clearfix">
     <div class="well">
-        <h2>Custom Totara110base Theme</h2>
-        <p>Created by <a href="http://www.ryandeberardinis.com">Ryan DeBerardinis</a> and <a href="https://github.com/weixish">Eric Bjella</a> for <a href="http://www.remote-learner.net">Remote-Learner</a></p>
+        <h2>Totara110base Theme for Totara11</h2>
+        <p>Created by <a href="http://www.ryandeberardinis.com">Ryan DeBerardinis</a></p>
     </div>
 </div>';
 $string['region-main'] = 'Main';

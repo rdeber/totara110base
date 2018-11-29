@@ -18,8 +18,6 @@
  *
  * @since     2.0
  * @package   theme_totara110base
- * @author    Amy Groshek <amy@remote-learner.net>
- * @copyright 2017 Remote-Learner.net
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

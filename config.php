@@ -43,7 +43,7 @@ $THEME->parents_exclude_sheets = array(
     'base' => array('flexible-icons'),
 );
 
-// We removed all references to side-post region in the array below to maintain ALtitude's 2-column layout
+// We removed all references to side-post region in the array below to maintain Totara110base's 2-column layout
 
 $THEME->layouts = array(
     // Most backwards compatible layout with blocks on the left - this is the layout used by default in Totara,
