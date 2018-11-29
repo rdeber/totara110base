@@ -121,11 +121,11 @@ if ($ADMIN->fulltree) {
         $name = 'theme_totara110base/socialmediaicons';
         $title = get_string('socialmediaicons', 'theme_totara110base');
         $description = get_string('socialmediaiconsdesc', 'theme_totara110base');
-        $default = "facebook|http://www.facebook.com/pages/Remote-Learner+US+Inc/1607948926102685\n";
-        $default .= "twitter|http://twitter.com/remotelearner\n";
-        $default .= "vimeo|https://vimeo.com/user16783620\n";
-        $default .= "linkedin|http://www.linkedin.com/company/1014793\n";
-        $default .= "rss|http://www.remote-learner.net/feed";
+        $default = "facebook|http://www.facebook.com\n";
+        $default .= "twitter|http://twitter.com\n";
+        $default .= "vimeo|https://vimeo.com\n";
+        $default .= "linkedin|http://www.linkedin.com\n";
+        $default .= "rss|#";
         $setting = new admin_setting_configtextarea($name, $title, $description, $default);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $settings->add($setting);

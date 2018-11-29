@@ -269,7 +269,7 @@ function theme_totara110base_fetch_banner($settings) {
 
         $themeimages['sliderimage2'] = $OUTPUT->pix_url('demo-slide2', 'theme');
         $settings->sliderheader2 = "Welcome to Totara110base";
-        $settings->slidertext1 = "Custom Totara11 Theme Template";
+        $settings->slidertext2 = "Custom Totara11 Theme Template";
         $settings->sliderbuttonlink2 = "#";
         $settings->sliderbuttonlabel2 = "Learn More";
     }
