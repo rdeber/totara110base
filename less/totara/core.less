@@ -1,0 +1,171 @@
+// This file is part of Totara LMS
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+// @package   theme_totara110base
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @copyright 2015 Bas Brands <www.sonsbeekmedia.nl>
+// @author    Bas Brands
+// @author    David Scotson
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @author    Rob Tyler <rob.tyler@totaralearning.com>
+
+
+// Page Layout ======================================================================
+#page-content {
+    padding: 2em 0 2em;
+}
+
+#block-region-side-pre {
+    width: 100%;
+
+    @media (min-width: @screen-md-min) {
+        width: 25%;
+    }
+}
+
+// Page Header and Breadcrumb ======================================================================
+.breadcrumb-wrap {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb-nav {
+    margin-bottom: 0;
+
+    .breadcrumb {
+        background-color: transparent;
+        padding: .5em;
+
+        > li {
+            display: inline;
+        }
+    }
+}
+
+/* replace first breadcrumb link with home icon */
+.breadcrumb-nav .breadcrumb li:first-of-type a {
+    font-size: 0;
+
+    &:before {
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-size: 16px;
+        margin-right: .25em;
+        text-shadow: none;
+        content: "\f015";
+        color: @brand-primary;
+        vertical-align: inherit;
+        float: left;
+
+        &:hover,
+        &:focus {
+            color: darken(@brand-primary, 10%);
+        }
+
+        &:active {
+            color: darken(@brand-primary, 15%);
+        }
+    }
+}
+
+.breadcrumb-button {
+    margin: 0;
+
+    .singlebutton {
+        margin-bottom: 0;
+
+        div {
+            margin: 0;
+        }
+    }
+}
+
+#page-header .singlebutton input {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    color: @link-color;
+    font-weight: bold;
+    margin: .5em 0;
+    padding: 0;
+
+    &:hover,
+    &:focus {
+        color: @link-hover-color;
+    }
+}
+
+#page-header .singlebutton div:before {
+    font-family: FontAwesome;
+    content: "\f013";
+    font-weight: normal;
+    font-size: 1.25em;
+    vertical-align: middle;
+    color: @brand-primary;
+}
+
+
+// Misc bug fixes ======================================================================
+
+/*reset no-overflow class*/
+.no-overflow {
+    overflow: visible;
+}
+
+/*fix comment box margin*/
+.comment-area {
+    margin-left: 0;
+    padding: 0;
+}
+.comment-area textarea.fullwidth {
+    margin: 0;
+    padding: .5em;
+}
+
+/*fix file system fonts*/
+.filemanager,
+.filepicker,
+.file-picker {
+    font-size: 1em;
+}
+
+/*
+forces min size on empty blocks when editing is turned on
+helps with drag/drop on some of totara110base's custom block regions
+*/
+.editing .block-region {
+    min-height: 50px !important;
+    min-width: 50px !important;
+}
+
+.dir-rtl {
+    /* Hide strange icon in branch trees */
+    .collapsed .tree_item.branch:before {
+        content: "";
+    }
+}
+
+/*
+IE scrollbar fix (AMT-119)
+Overrides core bootstrap setting to prevent IE vertical scrollbar from overlapping content
+*/
+@-ms-viewport {
+    width: auto !important;
+}
+
+//fix for assignment grader page conflict with side panel plugin
+body#page-mod-assign-grader {
+    position: static;
+}

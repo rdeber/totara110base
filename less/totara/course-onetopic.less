@@ -1,0 +1,317 @@
+//
+// This file is part of Totara LMS
+//
+// Copyright (C) 2016 onwards Totara Learning Solutions LTD
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <ht    tp://www.gnu.org/licenses/>.
+//
+// @copyright 2016 onwards Totara Learning Solutions LTD
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @package   theme_totara110base
+
+
+.format-onetopic .course-content .onetopic {
+    margin-top: 0;
+
+    .tabtree {
+        margin: 0 0 1.5em;
+
+        .tab_content.marker {
+            font-style: normal;
+        }
+
+        .nav-tabs {
+            margin-bottom: .25em;
+        }
+
+        .nav-tabs + .nav-tabs {
+            font-size: .9em;
+        }
+    }
+}
+
+//tabs onetopic styles
+body.totara110base-settings-onetopictabs .onetopic ul.nav-tabs li {
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0 1em .5em 0;
+    color: #fff;
+    background: transparent;
+    text-shadow: none;
+    font-weight: bold;
+
+    &.section.main {
+        padding: 1.5em;
+    }
+
+    &.active a,
+    &.active a:hover,
+    &.active a:focus {
+        background: @brand-primary;
+        color: #fff;
+    }
+
+    &:after {
+        content: "";
+        width: 26px;
+        height: 2px;
+        background-color: #bbb;
+        float: right;
+        top: 19px;
+        position: absolute;
+    }
+
+    &:last-child:after {
+        content: "";
+        display: none;
+    }
+
+    a {
+        float: left;
+        color: @gray;
+        font-weight: 600;
+        text-transform: none;
+        margin-right: 0;
+        padding: .5em .75em;
+        background-color: #fff;
+        .totara110base-box;
+
+        &:hover,
+        &:focus {
+            background: @brand-primary;
+            color: #fff;
+        }
+
+        &:active {
+            background: darken(@brand-primary, 10%);
+            box-shadow: none;
+            color: #fff;
+        }
+    }
+
+    .tab_content {
+        padding: 0;
+    }
+
+}
+
+body.totara110base-settings-onetopictabs .onetopic .nav-tabs + .nav-tabs {
+    font-size: .8em;
+    margin: 1em;
+
+    li {
+        margin-right: 1em;
+
+        a {
+            padding: .3em .75em;
+        }
+
+        &:after {
+            top: 16px;
+        }
+
+        &.active a:hover,
+        &.active a:focus {
+            background: transparent;
+        }
+    }
+}
+
+
+//vertical onetopic styles
+body.totara110base-settings-onetopicvertical .course-content .onetopic {
+    .totara110base-box;
+    position: relative;
+
+    .tabtree {
+        height: 100%;
+        margin: 0;
+
+        .nav-tabs {
+            border: none;
+            list-style: none;
+
+            @media (min-width: @screen-md-min) {
+                float: left;
+                width: 25%;
+                overflow: visible;
+            }
+
+        }
+    }
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    @media (min-width: @screen-md-min) {
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: #eee;
+            width: 25%;
+        }
+    }
+}
+
+body.totara110base-settings-onetopicvertical .course-content .onetopic .nav-tabs li {
+    width: 100%;
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+
+    @media (min-width: @screen-md-min) {
+        float: left;
+    }
+
+    &.active a {
+        background: darken(@brand-primary, 5%);
+        box-shadow: inset 4px 0 0 @brand-secondary;
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            background: darken(@brand-primary, 5%);
+            box-shadow: inset 4px 0 0 @brand-secondary;
+            color: #fff;
+        }
+    }
+
+    a {
+        font-family: @font-family-sans-serif-2;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: rgba(255,255,255,.9);
+        background: @brand-primary;
+        font-size: .9em;
+        text-decoration: none;
+        text-shadow: none;
+        box-shadow: inset 0 -1px 0 rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.05);
+        margin: 0;
+        padding: 1em;
+        border: none;
+        border-radius: 0;
+        transition: all 0.3s ease;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            background: lighten(@brand-primary, 5%);
+            box-shadow: inset 0 -1px 0 rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.05), inset 4px 0 0 @brand-secondary
+        }
+
+        &:active {
+            color: #fff;
+            background: darken(@brand-primary, 5%);
+        }
+
+        .tab_content {
+            padding: 0;
+            white-space: normal;
+            font-style: normal;
+        }
+    }
+}
+
+body.totara110base-settings-onetopicvertical .course-content .onetopic .nav-tabs + .nav-tabs {
+    background: transparent;
+    padding: 1em 1.5em 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+
+    @media (min-width: @screen-md-min) {
+        width: 75%;
+        float: right;
+    }
+
+    li {
+        background: transparent;
+        clear: none;
+        width: auto;
+        margin: 0;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        a {
+            background: transparent;
+            box-shadow: inset 0 -1px 0 #ddd;
+            border-radius: 0;
+            padding: .6em 1.2em;
+            color: @gray-light;
+
+            &:hover,
+            &:focus {
+                box-shadow: inset 0 -2px 0 @brand-primary;
+                background: transparent;
+            }
+
+            &:focus {
+                background: transparent;
+                color: @brand-primary;
+            }
+        }
+
+        &.active a {
+            background: transparent;
+            box-shadow: inset 0 -2px 0 @brand-primary;
+            color: @brand-primary;
+
+            &:hover,
+            &:focus {
+                background: transparent;
+            }
+        }
+    }
+}
+
+body.totara110base-settings-onetopicvertical .course-content .onetopic ul.topics {
+    padding: 1.5em;
+
+    li.section {
+        border: none;
+        padding: 0;
+        background: #fff;
+        box-shadow: none;
+    }
+
+    @media (min-width: @screen-md-min) {
+        float: right;
+        width: 75%;
+    }
+}
+
+body.totara110base-settings-onetopicvertical .course-content .onetopic.single-section .section-navigation {
+    clear: both;
+    display: block;
+    padding: 2em 1em;
+    margin-bottom: 0;
+
+    @media (min-width: @screen-md-min) {
+        width: 75%;
+        float: right;
+    }
+}

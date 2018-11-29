@@ -1,0 +1,16 @@
+To update theme CSS, you must set up and run a totara-specific grunt process.
+
+1. Install npm locally `npm install -g grunt-cli`
+2. Run npm setup for totara:
+    cd totarawwwroot
+    npm install
+3. Run grunt process within theme directory:
+    cd theme/themename
+    grunt css
+4. If changes are made to the files in less/colors Update the css files by changing to
+   the theme/themename directory and running
+    ls less/colors/*less | sed 's/.less//g' | awk -F/ '{ print "lessc less/colors/"$NF".less style/"$NF"-noprocess.css" }' | bash
+
+For more information, see:
+* https://help.totaralearning.com/display/DEV/Working+With+LESS+in+Themes
+* http://lesscss.org

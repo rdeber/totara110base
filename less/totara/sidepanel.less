@@ -1,0 +1,383 @@
+//
+// This file is part of Totara LMS
+//
+// Copyright (C) 2016 onwards Totara Learning Solutions LTD
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <ht    tp://www.gnu.org/licenses/>.
+//
+// @copyright 2016 onwards Totara Learning Solutions LTD
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @package   theme_totara110base
+
+
+#sb-site {
+    background: transparent;
+}
+
+#side-panel-button {
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.5em;
+    background: @brand-secondary;
+    transition: all 0.3s;
+    min-height: 34px;
+    min-width: 47px;
+
+    &:hover,
+    &:focus {
+        background: darken(@brand-secondary, 5%);
+    }
+
+    &:focus {
+        background: darken(@brand-secondary, 10%);
+    }
+
+    &.show {
+        display: block;
+    }
+}
+
+#side-panel-button.sb-toggle-left {
+    float: left;
+}
+
+#side-panel-button.sb-toggle-right {
+    float: right;
+    margin-left: .75em;
+}
+
+#hamburger,
+#hamburger * {
+    box-sizing: border-box;
+}
+
+#hamburger {
+    display: block;
+    width: 2em;
+    height: 1.5em;
+    float: left;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all 0.3s;
+}
+
+@media (min-width: @screen-sm-min) {
+    .sb-toggle-left {
+        margin-left: 0;
+    }
+}
+
+#hamburger span.icon-bar {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 30px;
+    background: #fff;
+    border-radius: 5px;
+    opacity: 1;
+    left: 8px;
+    transform: rotate(0deg);
+    transition: all 0.3s;
+}
+
+.sb-active #hamburger span.icon-bar {
+    transition-delay: .3s;
+}
+
+#hamburger span.icon-bar:nth-child(1) {
+    top: 11px;
+}
+
+#hamburger span.icon-bar:nth-child(2) {
+    box-shadow: none;
+}
+
+#hamburger span.icon-bar:nth-child(2),
+#hamburger span.icon-bar:nth-child(3) {
+    top: 17px;
+}
+
+#hamburger span.icon-bar:nth-child(4) {
+    top: 23px;
+}
+
+.sb-active #hamburger span.icon-bar:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+
+.sb-active #hamburger span.icon-bar:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.sb-active #hamburger span.icon-bar:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.sb-active #hamburger span.icon-bar:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+
+#hamburger span.screen-reader-text {
+    clip: rect(1px,1px,1px,1px);
+    position: absolute!important;
+    height: 1px!important;
+    width: 1px!important;
+    overflow: hidden;
+}
+
+/*styles for optional menu text*/
+.optional-display-text {
+    float: left;
+    font-weight: bold;
+    font-size: .5em;
+    font-family: @font-family-sans-serif-2;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 10px 0 0 2px;
+    margin: 0 1em;
+    transition: all 0.3s;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    #hamburger + & {
+        margin-left: 0;
+    }
+}
+
+#sidebar-block {
+    background: darken(@brand-primary, 15%);
+    box-shadow: @totara110base-box-shadow-2;
+}
+
+#sidebar-block,
+#sidebar-block p {
+    color: rgba(255,255,255,.8);
+}
+
+#sidebar-block a {
+    color: rgba(255,255,255,.9);
+
+    &:hover,
+    &:focus {
+        color: #fff;
+    }
+}
+
+#sidebar-block .block {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+    box-shadow: none;
+}
+
+#sidebar-block .skip-block-to {
+    height: 0;
+}
+
+#sidebar-block .block .header {
+    box-shadow: none;
+    padding: .6em 1em;
+    background-color: darken(@brand-primary, 25%);
+    border: none;
+    box-shadow: inset 0 -1px rgba(0,0,0,.1), inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+#sidebar-block .block .header .block_action {
+    float: none;
+    z-index: 2;
+    position: absolute;
+    right: 0;
+}
+
+#sidebar-block .block .moodle-actionmenu[data-enhanced] .menubar .flex-icon {
+    color: rgba(255,255,255,.8);
+
+    .ft-stack-suffix {
+        display: none;
+    }
+
+    &:hover,
+    &:focus {
+        color: #fff;
+    }
+}
+
+#sidebar-block .block .moodle-actionmenu[data-enhanced].show .menu {
+    position: static;
+    background: darken(@brand-primary, 15%);
+    border-radius: @border-radius-base;
+    width: 100%;
+    margin: 0;
+    display: block;
+    float: none;
+    box-shadow: none;
+}
+
+#sidebar-block .block .moodle-actionmenu[data-enhanced].show .menu>li>a {
+    padding: .3em;
+    box-shadow: none;
+
+    &.menu-action .flex-icon {
+        color: @brand-secondary;
+        font-size: 1.3em;
+        margin-right: .1em;
+        vertical-align: bottom;
+    }
+
+    &.menu-action .ft-stack-suffix {
+        display: none;
+    }
+
+    &:hover,
+    &:focus {
+        &.menu-action .flex-icon {
+            color: #fff;
+        }
+    }
+
+    &:active {
+        text-decoration: underline;
+    }
+}
+
+#sidebar-block .block .header h2 {
+    color: rgba(255,255,255,.9);
+
+    &:before {
+        color: @brand-secondary;
+    }
+}
+
+#sidebar-block .block_action a {
+    .flex-icon {
+        color: @brand-secondary;
+        transition: all 0.3s;
+    }
+
+    &:hover,
+    &:focus {
+        .flex-icon {
+            color: #fff;
+        }
+    }
+}
+
+#sidebar-block .block .content {
+    padding-top: .5em;
+
+    .flex-icon {
+        color: @brand-secondary;
+    }
+}
+
+#sidebar-block .block hr {
+    border-top: 1px solid rgba(0,0,0,.15);
+    border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+#sidebar-block .block #adminsearchquery {
+    background: darken(@brand-primary, 20%);
+    border: none;
+    box-shadow: inset 0 1px 0 rgba(0,0,0,.4), inset 0 -1px 0 rgba(255,255,255,.2);
+    color: rgba(255,255,255,.75);
+
+    &:focus {
+        box-shadow: inset 0 1px 0 rgba(0,0,0,.4), inset 0 -2px 0 @brand-secondary;
+        outline: none;
+    }
+}
+
+#sidebar-block .block #adminsearchquery + .input-group-btn button {
+    padding: .5em 1em;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.2), @totara110base-box-shadow-1;
+
+    &:hover,
+    &:focus {
+        box-shadow: inset 0 -1px 0 rgba(0,0,0,0);
+    }
+}
+
+/*style the input placeholder text*/
+#sidebar-block .block #adminsearchquery::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgba(255,255,255,.5);
+}
+
+#sidebar-block .block #adminsearchquery::-moz-placeholder { /* Firefox 19+ */
+    color: rgba(255,255,255,.5);
+}
+
+#sidebar-block .block #adminsearchquery:-ms-input-placeholder { /* IE 10+ */
+    color: rgba(255,255,255,.5);
+}
+
+#sidebar-block .block #adminsearchquery:-moz-placeholder { /* Firefox 18- */
+    color: rgba(255,255,255,.5);
+}
+
+#sidebar-block .block #adminsearchquery:placeholder { /* Firefox 18- */
+    color: rgba(255,255,255,.5);
+}
+
+#sidebar-block .block_news_items .content ul li {
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.empty-region-sidebar-block .sb-toggle-right,
+.empty-region-sidebar-block .sb-toggle-left {
+    display: none;
+}
+
+.empty-region-sidebar-block.editing .sb-toggle-right,
+.empty-region-sidebar-block.editing .sb-toggle-left {
+    display: inline;
+}
+
+/* Slidebars overrides, remove resting-state transforms */
+.custom-theme .sb-slide,
+.custom-theme #sb-site {
+    -webkit-transform: none;
+       -moz-transform: none;
+         -o-transform: none;
+            transform: none;
+}
+
+html {
+    height: auto;
+}
+
+header.navbar.navbar-fixed-top {
+    z-index: 5000;
+}
+
+html.sb-active, html.sb-active body {
+    overflow-x: hidden;
+}
+
+/* Overrides some color settings from slidebars. */
+[off-canvas] {
+    color: inherit;
+}

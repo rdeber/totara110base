@@ -1,0 +1,231 @@
+//
+// This file is part of Totara LMS
+//
+// Copyright (C) 2016 onwards Totara Learning Solutions LTD
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <ht    tp://www.gnu.org/licenses/>.
+//
+// @copyright 2016 onwards Totara Learning Solutions LTD
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @package   theme_totara110base
+
+
+
+.slider-wrapper {
+    background: @brand-primary;
+    box-shadow: none;
+}
+
+#banner-wrap {
+    position: relative;
+    transform-style: preserve-3d;
+    background: #fff;
+    clear: both;
+}
+
+.lean-slider-slide {
+    max-height: none;
+}
+
+.lean-slider-slide.current {
+    z-index: 2;
+}
+
+#slideimg {
+    width: 100%;
+    display: none;
+}
+
+#slideimg.animated {
+    display: block;
+}
+
+.banner-title {
+    display: none;
+    font-size: .9em;
+    text-align: center;
+    background: @brand-primary;
+    padding: .75em 1em;
+    z-index: 2; /* used to fix a bug where links in the 1st slide do not change on hover */
+    animation-delay: .5s;
+
+    @media (min-width: @screen-sm-min) {
+        font-size: 1em;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: rgba(55,55,55,.9);
+        margin: 0 auto;
+        padding: 1.5em;
+        box-shadow: @totara110base-box-shadow-2, 0 0 0 10px rgba(255,255,255,.3);
+    }
+}
+
+.banner-title h1 {
+    .header-underline;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1;
+    text-transform: uppercase;
+    margin: 0 0 .2em;
+    animation-delay: 1s;
+
+    &:after {
+        .header-underline-after;
+        height: 1px;
+        margin: .2em auto .1em;
+    }
+
+    @media (min-width: @screen-sm-min) {
+        font-size: 2.2em;
+        padding: 0;
+
+        &:after {
+            display: none;
+        }
+    }
+}
+
+.banner-title p {
+    font-size: 1em;
+    font-weight: normal;
+    color: rgba(255,255,255,.8);
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+}
+
+.banner-title a {
+    &:link,
+    &:visited {
+        font-size: 1.1em;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #fff;
+        opacity: .85;
+    }
+
+    .fa {
+        vertical-align: bottom;
+    }
+
+    &:hover,
+    &:focus,
+    &:link:hover,
+    &:link:focus {
+        color: #fff;
+        opacity: 1;
+        text-decoration: none;
+    }
+}
+
+#slider-direction-nav {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    top: 21%;
+    width: 100%;
+    z-index: 2;
+
+    @media (min-width: @screen-sm-min) {
+        top: 42%;
+    }
+}
+
+#slider-direction-nav a {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: rgba(0,0,0,.5);
+    border: 1px solid rgba(255,255,255,.2);
+    overflow: hidden;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+#slider-direction-nav a:hover,
+#slider-direction-nav a:focus {
+    background: rgba(0,0,0,.7);
+}
+
+#slider-direction-nav a:before {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-size: 1.25em;
+    margin-right: .25em;
+    text-shadow: none;
+    color: rgba(255,255,255,.9);
+    text-indent: 0;
+    position: absolute;
+}
+
+#slider-direction-nav a.lean-slider-prev {
+    border-left: none;
+    float: none;
+    position: absolute;
+    left: 0;
+
+    &:before {
+        content: "\f053";
+        left: 15px;
+    }
+}
+
+#slider-direction-nav a.lean-slider-next {
+    border-right: none;
+    float: none;
+    position: absolute;
+    right: 0;
+
+    &:before {
+        content: "\f054";
+        right: 10px;
+    }
+}
+
+#slider-control-nav {
+    display: none;
+
+    @media (min-width: @screen-sm-min) {
+        display: block;
+        opacity: 1;
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        width: 100%;
+        z-index: 2;
+    }
+}
+
+#slider-control-nav a {
+    background: rgba(255,255,255,.5);
+    border: 3px solid rgba(255,255,255,.5);
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    text-indent: -99999px;
+
+    &:hover,
+    &:focus {
+        background: rgba(255,255,255,.6);
+        border: 3px solid rgba(255,255,255,.75);
+        text-decoration: none;
+    }
+
+    &:active {
+        background: rgba(255,255,255,.9);
+        border: 3px solid rgba(255,255,255,1);
+    }
+}

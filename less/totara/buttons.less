@@ -1,0 +1,99 @@
+//
+// This file is part of Totara LMS
+//
+// Copyright (C) 2016 onwards Totara Learning Solutions LTD
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <ht    tp://www.gnu.org/licenses/>.
+//
+// @copyright 2016 onwards Totara Learning Solutions LTD
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @package   theme_basis
+
+
+/*override inconsistent button margins*/
+#notice .singlebutton+.singlebutton input,
+.submit.buttons input[name="cancel"],
+input[name="searchwikicontent"]+input[type="submit"],
+select+input[type="submit"],
+input[type="text"]+input[type="button"],
+input[type="password"]+input[type="submit"],
+input[type="text"]+button,
+input[type="text"]+input[type="submit"] {
+    margin: 0;
+}
+
+.btn {
+    font-weight: 600;
+    border: none;
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,.2), @totara110base-box-shadow-1;
+    transition: all 0.3s;
+
+    &:hover,
+    &:focus {
+        box-shadow: inset 0 -2px 0 rgba(0,0,0,.2);
+        outline: none;
+        border: none;
+    }
+
+    &:active {
+        box-shadow: none;
+        outline: none;
+        border: none;
+    }
+
+    &:focus:active {
+        outline: 0;
+    }
+
+    & + & {
+        margin-left: .5em;
+    }
+}
+
+button.yui3-button {
+    .btn;
+    color: #fff;
+    background: @brand-primary;
+}
+
+button,
+button.ui-button.ui-widget.ui-state-default,
+input.form-submit,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    .btn;
+    margin: 0;
+
+    & + & {
+        margin-left: .5em;
+    }
+}
+
+/*canel button styles*/
+#notice .singlebutton+.singlebutton input,
+.submit.buttons input[name="cancel"],
+input[name="cancel"],
+.btn-cancel {
+    .btn-secondary;
+}
+
+/*this fixes a problem with collapsing boxes and floats*/
+@media (min-width: @screen-md-min) {
+	.path-admin .buttons {
+		float: none;
+		margin-left: 0;
+	}
+}

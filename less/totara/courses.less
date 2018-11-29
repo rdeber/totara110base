@@ -1,0 +1,181 @@
+//
+// This file is part of Totara LMS
+//
+// Copyright (C) 2016 onwards Totara Learning Solutions LTD
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <ht    tp://www.gnu.org/licenses/>.
+//
+// @copyright 2016 onwards Totara Learning Solutions LTD
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @package   theme_totara110base
+
+
+//set base course mixin styles
+.course-section-header {
+    background: #f5f5f5;
+    margin: 0;
+    padding: .25em .5em;
+    border: 1px solid #eee;
+    border-radius: 3px;
+}
+
+//topics + weeks course formats
+.course-content ul li.section.main {
+    .totara110base-box;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.course-content ul li.section.main > .content > h3.sectionname {
+    margin-top: 0;
+}
+
+.path-course-view .completionprogress {
+    top: .5em;
+    right: .5em;
+}
+
+.course-content ul.section li.activity {
+    padding: .5em;
+    margin: 0;
+}
+
+.course-content ul.section li.activity .activityinstance a {
+    padding: 1em 0;
+}
+
+.course-content ul.section li.activity .activityinstance span.instancename {
+    padding: 1em 0;
+}
+
+.course-content ul.section li.activity .editing_move {
+    top: .5em;
+}
+
+.course-content ul.section li.activity .actions {
+    top: .75em;
+}
+
+.editing .course-content ul.section li.activity .actions {
+    top: .1em;
+}
+
+.course-content ul.topics li.section .left .ft-spacer,
+.course-content ul.weeks li.section .left .ft-spacer,
+.course-content ul.topics li.section .right .ft-spacer,
+.course-content ul.weeks li.section .right .ft-spacer {
+    display: inline;
+}
+
+.course-content ul.topics li.section .left,
+.course-content ul.weeks li.section .left,
+.course-content ul.topics li.section .right .section_action_menu,
+.course-content ul.weeks li.section .right .section_action_menu {
+    padding-top: .5em;
+}
+
+.course-content ul.topics li.section .content,
+.course-content ul.weeks li.section .content {
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+.course-content ul.topics li.section.main h3.sectionname,
+.course-content ul.weeks li.section.main h3.sectionname {
+    .course-section-header;
+}
+
+.course-content ul.topics li.section .content .section > li:first-of-type,
+.course-content ul.weeks li.section .content ul.section > li:first-of-type {
+    margin-top: .5em;
+}
+
+
+//forum styles
+#page-header .forumsearch {
+    margin-top: .3em;
+}
+
+#page-header .forumsearch #search {
+    .form-input-style;
+    border: 1px solid #ddd;
+    margin-right: .5em;
+    height: 30px;
+}
+
+#searchforums {
+    .btn-xs; /*make course search button xs size*/
+    vertical-align: top;
+    margin-top: .5em;
+}
+
+.block_search_forums #searchform_button {
+    width: 100%;
+    padding: .5em;
+    display: block;
+}
+
+
+//demo course format
+.course-content ul.demosections li.section .content {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+
+//program styles
+.nextsetoperator .operator-and,
+.nextsetoperator .operator-or,
+.nextsetoperator .operator-then {
+    font-size: 1em;
+    height: auto;
+    margin: .5em;
+    padding-right: 35px;
+}
+
+.nextsetoperator-then,
+.nextsetoperator .operator-then {
+    background: none;
+
+    &:after {
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-size: 1.5em;
+        line-height: 1.5em;
+        margin-left: .25em;
+        text-shadow: none;
+        content: "\f0d7";
+        color: @gray;
+        vertical-align: inherit;
+        position: relative;
+        top: 1px;
+    }
+}
+
+
+//Book mod printing styles
+#page-mod-book-print {
+    margin: 0 !important;
+    padding: 1em !important;
+    font-size: 14px !important;
+
+    .book_summary {
+        margin: 0 !important;
+        text-align: left;
+        margin-bottom: 1em;
+    }
+}

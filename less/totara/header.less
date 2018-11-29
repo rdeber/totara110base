@@ -1,0 +1,124 @@
+// This file is part of Totara LMS
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+// @package   theme_totara110base
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @copyright 2015 Bas Brands <www.sonsbeekmedia.nl>
+// @author    Bas Brands
+// @author    David Scotson
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @author    Rob Tyler <rob.tyler@totaralearning.com>
+
+
+.navbar {
+    box-shadow: none;
+}
+
+.navbar-site {
+    z-index: 3;
+    margin-bottom: 0;
+    min-height: 32px;
+}
+
+.navbar-header.pull-left {
+    margin: 0;
+    float: none !important; /*important needed to override core style*/
+
+    @media (min-width: @screen-sm-min) {
+        float: left !important; /*important needed to reset core style*/
+    }
+}
+.navbar-header.pull-right {
+    float: none !important; /*important needed to override core style*/
+
+    @media (min-width: @screen-sm-min) {
+        float: right !important; /*important needed to reset core style*/
+    }
+}
+
+.navbar-header:last-child {
+    padding-top: 0;
+}
+
+#logo {
+    float: none;
+    margin: 0 auto;
+    padding: .3em 0;
+    max-width: 300px;
+    transition: all 0.3s ease;
+
+    img {
+        max-height: 75px;
+        max-width: 100%;
+    }
+
+    @media (min-width: @screen-sm-min) {
+        float: left;
+        padding: .75em 0 .75em .5em;
+    }
+}
+
+#totara-header-bar-icons.social-links {
+    display: none;
+
+    @media (min-width: @screen-sm-min) {
+        display: block;
+        float: right;
+        margin-right: .5em;
+    }
+}
+
+#sidebar-block .social-links {
+    text-align: center;
+    background: darken(@brand-primary, 25%);
+    padding: .2em 0;
+
+    a {
+        font-size: 1.5em;
+        margin: 0 .1em;
+        width: 1em;
+        display: inline-block;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    @media (min-width: @screen-sm-min) {
+        display: none;
+    }
+}
+
+#totara-header-bar-icons.social-links a {
+    font-size: 1.5em;
+    color: rgba(255,255,255,.75);
+    width: 1.3em;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+
+    &:hover,
+    &:focus {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+/* Fix for UI modals that underlap header */
+.yui3-dd-draggable {
+    z-index: 9999 !important;
+}

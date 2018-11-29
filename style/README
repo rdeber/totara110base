@@ -1,0 +1,1 @@
+Do not make changes to these CSS files. They are either vendor files or files compiled using a grunt less build process. Changes to theme CSS should be made to files in the less directory. Then follow the grunt build process documented in less/README.

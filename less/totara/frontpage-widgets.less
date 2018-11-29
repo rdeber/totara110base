@@ -1,0 +1,457 @@
+//
+// This file is part of Totara LMS
+//
+// Copyright (C) 2016 onwards Totara Learning Solutions LTD
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <ht    tp://www.gnu.org/licenses/>.
+//
+// @copyright 2016 onwards Totara Learning Solutions LTD
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @package   theme_totara110base
+
+
+#frontpage-course-list,
+#frontpage-category-combo,
+#frontpage-category-names {
+    text-align: center;
+
+    >h2 {
+        .header-underline;
+        font-size: 1.75em;
+        text-transform: uppercase;
+
+        &:after {
+            .header-underline-after;
+        }
+    }
+}
+
+/* frontpage grid course widget styles */
+#frontpage-course-list .coursebox .content .summary,
+.frontpage-category-combo .coursebox .content .summary {
+    padding-left: 0;
+}
+
+/* Grid course box styles for front page enhanced grid view (available/my courses) */
+#frontpage-course-list .courses .gridcoursebox {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 1em 1%;
+    padding-bottom: 3.25em;
+    overflow: hidden;
+    text-align: center;
+    border: none;
+    position: relative;
+
+    @media (max-width: @screen-xs-max) {
+        height: auto !important; /*important needed here to override inline height from equal height js*/
+    }
+
+    @media (min-width: @screen-sm-min) {
+        width: 32%;
+    }
+
+    @media (min-width: @screen-md-min) {
+        width: 24%;
+    }
+
+    @media (min-width: @screen-lg-min) {
+        width: 19%;
+    }
+
+    .gridcourseimage img {
+        max-width: 100%;
+        max-height: 300px;
+    }
+
+    .gridcoursesummary {
+        margin: .25em .75em .5em;
+    }
+
+    .gridcoursecontacts {
+        font-size: .8em;
+        list-style: none;
+        margin: 10px;
+    }
+
+    .gridcoursebutton {
+        margin: 0;
+        padding: .75em 0;
+        width: 100%;
+        border-radius: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+    }
+
+    .info {
+        padding: 0;
+
+        .coursename {
+            float: none;
+        }
+    }
+
+    >.info>h3.coursename {
+        line-height: 1;
+        margin: .5em .75em .25em;
+        float: none;
+
+        a {
+            line-height: 1;
+            padding: 0;
+            min-height: 0;
+            font-weight: normal;
+            word-break: break-word;
+            display: inline;
+        }
+    }
+
+    .content {
+        .summary,
+        .coursecat {
+            float: none;
+            width: 100%;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .teachers,
+        .courseimage,
+        .coursefile {
+            float: none;
+        }
+
+        .courseimage {
+            margin: 0;
+        }
+
+        .teachers {
+            font-size: .8em;
+        }
+    }
+}
+
+
+/* frontpage category widget styles */
+#frontpage-category-names {
+
+    .course_category_tree {
+        text-align: left;
+        .totara110base-box;
+        padding: 1em;
+        margin-bottom: .25em;
+        position: relative;
+
+        /* target top level categories */
+        > .content > .subcategories > .category {
+            background: #f8f8f8;
+            border: 1px solid #eaeaea;
+            border-radius: @border-radius-base;
+            margin-bottom: .5em;
+            padding: .3em;
+            transition: all 0.3s;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            .categoryname {
+                padding: .3em;
+                margin: 0;
+                font-size: 1.5em;
+                line-height: 1.3;
+
+                a:hover,
+                a:focus {
+                    text-decoration: none;
+                }
+
+                .flex-icon {
+                    width: 1em;
+                    vertical-align: baseline;
+                }
+            }
+
+            &:hover,
+            &:focus {
+                background: #f1f1f1;
+
+                > .info > .categoryname > a {
+                    color: @link-hover-color;
+                }
+            }
+        }
+
+        /* target 2nd level categories */
+        > .content > .subcategories > .category > .content > .subcategories {
+            background: transparent;
+
+            > .category {
+                transition: all 0.3s;
+
+                > .info > .categoryname {
+                    font-size: 1.3em;
+                }
+
+                &:hover,
+                &:focus {
+                    background: #f9f9f9;
+
+                    > .info > .categoryname > a {
+                        color: @link-hover-color;
+                    }
+                }
+            }
+        }
+
+        /* target 3rd level categories */
+        > .content > .subcategories > .category > .content > .subcategories .subcategories {
+            background: transparent;
+
+            > .category {
+                transition: all 0.3s;
+
+                > .info > .categoryname {
+                    font-size: 1.1em;
+                }
+
+                &:hover,
+                &:focus {
+                    background: #fff;
+
+                    > .info > .categoryname > a {
+                        color: @link-hover-color;
+                    }
+                }
+            }
+        }
+
+        /* target 4th level categories */
+        > .content > .subcategories > .category > .content > .subcategories .subcategories .subcategories {
+            background: transparent;
+
+            > .category {
+                transition: all 0.3s;
+
+                > .info > .categoryname {
+                    font-size: 1em;
+                }
+
+                &:hover,
+                &:focus {
+                    background: #fff;
+
+                    > .info > .categoryname > a {
+                        color: @link-hover-color;
+                    }
+                }
+            }
+        }
+
+        .collapsible-actions {
+            position: absolute;
+            top: -2em;
+            right: 0;
+        }
+    }
+}
+
+/* frontpage category combo widget styles */
+#frontpage-category-combo {
+
+    .course_category_tree {
+        text-align: left;
+        .totara110base-box;
+        padding: 1em;
+        margin-bottom: .25em;
+        position: relative;
+
+        /* target top level categories */
+        > .content > .subcategories > .category {
+            background: #f8f8f8;
+            border: 1px solid #eaeaea;
+            border-radius: @border-radius-base;
+            margin-bottom: .5em;
+            padding: .5em;
+            transition: all 0.3s;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            .info {
+                background: transparent;
+                margin: 0;
+                padding: 0;
+
+                .categoryname {
+                    padding: .25em;
+                    margin: 0;
+                    font-size: 1.5em;
+                    line-height: 1.3;
+
+                    a:hover,
+                    a:focus {
+                        text-decoration: none;
+                    }
+
+                    .flex-icon {
+                        width: 1em;
+                        vertical-align: baseline;
+                    }
+                }
+            }
+
+            .content .courses {
+                margin-top: .5em;
+
+                .panel {
+                    background: #fbfbfb;
+                    border: 1px solid #eee;
+                    margin: 0;
+                    padding: 0;
+                    margin-bottom: .3em;
+                    box-shadow: none;
+
+                    .panel-heading {
+                        background: transparent;
+                        box-shadow: none;
+                        border: none;
+                        margin: 0;
+                        padding: 0;
+
+                        .enrolmenticons,
+                        .moreinfo {
+                            float: none;
+                            display: inline-block;
+                        }
+
+                        .coursename a {
+                            background-position: center left;
+                        }
+                    }
+
+                    .content {
+                        padding: 1em;
+
+                        .summary {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+
+            &.collapsed:hover,
+            &.collapsed:focus {
+                background: #f1f1f1;
+
+                > .info > .categoryname > a {
+                    color: @link-hover-color;
+                }
+            }
+        }
+
+        /* target 2nd level categories */
+        > .content > .subcategories > .category > .content > .subcategories {
+            background: transparent;
+
+            > .category {
+                transition: all 0.3s;
+
+                > .info > .categoryname {
+                    font-size: 1.3em;
+                }
+            }
+        }
+
+        /* target 3rd level categories */
+        > .content > .subcategories > .category > .content > .subcategories .subcategories {
+            background: transparent;
+
+            > .category {
+                transition: all 0.3s;
+
+                > .info > .categoryname {
+                    font-size: 1.1em;
+                }
+            }
+        }
+
+        /* target 4th level categories */
+        > .content > .subcategories > .category > .content > .subcategories .subcategories .subcategories {
+            background: transparent;
+
+            > .category {
+                transition: all 0.3s;
+
+                > .info > .categoryname {
+                    font-size: 1em;
+                }
+            }
+        }
+
+        .collapsible-actions {
+            position: absolute;
+            top: -2em;
+            right: 0;
+        }
+    }
+}
+
+
+/* course category index page styles */
+#page-course-index-category .course_category_tree {
+
+    .panel-heading {
+        padding: .25em;
+        margin: 0;
+        background: #f8f8f8;
+        border: 1px solid #eee;
+
+        .coursename {
+            padding: 0;
+            margin: 0;
+            font-size: 1.5em;
+
+            a {
+                background-position: left center;
+            }
+        }
+    }
+
+    .content {
+
+        .summary {
+            margin: .75em .5em .5em;
+        }
+    }
+}
+
+#page-course-index-category .generalbox.info {
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: none;
+    padding: 1em;
+
+    p:only-child,
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}

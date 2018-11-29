@@ -1,0 +1,355 @@
+// This file is part of Totara LMS
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+// @package   theme_totara110base
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @copyright 2015 Bas Brands <www.sonsbeekmedia.nl>
+// @author    Bas Brands
+// @author    David Scotson
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @author    Rob Tyler <rob.tyler@totaralearning.com>
+
+
+//START custom login button styles
+.notloggedin #totara-header-bar .usermenu,
+.notloggedin .navbar-header .usermenu,
+.usermenu-wrap a.login-btn,
+#totara-header-bar a.login-btn {
+    display: none;
+}
+
+a.login-btn:before {
+    font-family: FontAwesome;
+    content: "\f007";
+    font-weight: normal;
+    font-size: 1.25em;
+    margin-right: .25em;
+    text-shadow: none;
+    color: @brand-secondary;
+    text-indent: 0;
+    min-height: 35px;
+}
+
+.notloggedin .usermenu-wrap a.login-btn {
+    display: none;
+    font-family: @font-family-sans-serif-2;
+    font-size: .9em;
+    text-transform: uppercase;
+    margin-right: 1em;
+
+    @media (min-width: @screen-sm-min) {
+        display: block;
+    }
+}
+
+.notloggedin #totara-header-bar a.login-btn {
+    font-family: @font-family-sans-serif-2;
+    display: block;
+    float: right;
+    margin: 0;
+    padding: 6px 15px 5px;
+    background: darken(@brand-primary, 5%);
+    height: 100%;
+    min-height: 32px;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+        background: darken(@brand-primary, 10%);
+    }
+
+    &:active {
+        background: darken(@brand-primary, 15%);
+    }
+
+    @media (min-width: @screen-sm-min) {
+        display: none;
+    }
+}
+
+
+//START custom login page styles
+#page-login-index #sb-site {
+    padding: 0;
+    border-radius: 0;
+    background: radial-gradient(ellipse at center, lighten(@brand-primary, 7%) 0%, @brand-primary 66%, darken(@brand-primary, 15%) 100%);
+    background-size: cover;
+}
+
+#page-login-index #page-content {
+    padding: 1em 0 2.5em;
+}
+
+#page-login-index a {
+    color: rgba(255,255,255,.9);
+    font-weight: bold;
+}
+
+#page-login-index a:hover,
+#page-login-index a:focus {
+    color: #fff;
+}
+
+#page-login-index input[type="checkbox"],
+#page-login-index .checkbox input[type="checkbox"],
+#page-login-index .checkbox-inline input[type="checkbox"] {
+    top: .25em;
+}
+
+#page-login-index input[type="checkbox"]:after,
+#page-login-index .checkbox input[type="checkbox"]:after,
+#page-login-index .checkbox-inline input[type="checkbox"]:after {
+    border: 2px solid @brand-secondary;
+    margin: 0;
+}
+
+#page-login-index .ft-state-info {
+    color: @brand-secondary !important; /*need important flag here to override core css*/
+}
+
+#page-login-index .navbar-site {
+    box-shadow: @totara110base-box-shadow-1;
+    border-radius: 0;
+}
+
+#page-login-index .navbar-header {
+    float: none;
+}
+
+#page-login-index #region-main {
+    padding: 0;
+    color: rgba(255,255,255,0.8);
+
+    @media (min-width: @screen-sm-min) {
+        padding-top: 3em;
+    }
+}
+
+#page-login-index .loginbox .desc {
+    color: rgba(255,255,255,.8);
+}
+
+#page-login-index #logo {
+    float: none;
+    margin: 0 auto;
+}
+
+.loginbox.onecolumn {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.loginbox.onecolumn .loginpanel {
+    margin: 0 auto;
+}
+
+#page-login-index .loginpanel {
+    background: transparent;
+    display: block;
+    box-shadow: none;
+    overflow: hidden;
+    max-width: 500px;
+    text-align: center;
+
+    @media (min-width: @screen-md-min) {
+        max-width: 100%;
+    }
+
+    @media (min-width: @screen-sm-min) {
+        background: darken(@brand-primary, 3%);
+        box-shadow: @totara110base-box-shadow-2;
+        border-radius: @border-radius-base;
+    }
+}
+
+#page-login-index .loginpanel .subcontent {
+    margin: 0;
+    padding: 2em;
+}
+
+#page-login-index .loginpanel .loginerrors {
+    border: none;
+    background: rgba(255,255,255,.1);
+    display: inline-block;
+    margin-bottom: 1em;
+    padding: .5em 1em;
+}
+
+#page-login-index .loginpanel .error {
+    color: #fff;
+}
+
+#page-login-index .loginpanel > h2 {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+    padding: .3em;
+    font-size: 2em;
+
+    @media (min-width: @screen-md-min) {
+        background: darken(@brand-primary, 10%);
+    }
+}
+
+#page-login-index .loginpanel .loginform {
+    margin-top: 0;
+}
+
+#page-login-index .loginpanel .loginform .form-label {
+    float: none;
+    width: auto;
+}
+
+#page-login-index .loginpanel .loginform .form-input {
+    float: none;
+    width: auto;
+}
+
+#page-login-index .loginbox .clearer {
+    height: .75em;
+}
+
+#page-login-index .loginbox .loginform .form-input input {
+    width: 100%;
+    height: 4em;
+    margin: 0 auto;
+    padding: 0 1em;
+    background: darken(@brand-primary, 12%);
+    color: rgba(255,255,255,.8);
+    border: none;
+    box-shadow: inset 0 1px 0 rgba(0,0,0,.2), inset 0 -1px 0 rgba(255,255,255,.2);
+    border-radius: 0;
+    transition: all .3s;
+
+    &:focus,
+    &:active {
+        background: darken(@brand-primary, 15%);
+        box-shadow: inset 0 -5px 0 @brand-secondary, inset 0 1px 0 rgba(0,0,0,.2), inset 0 -1px 0 rgba(255,255,255,.2);
+    }
+
+    /* override Chrome yellow autocomplete background color */
+    &:-webkit-autofill {
+        -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,.2), inset 0 -1px 0 rgba(255,255,255,.2), inset 0 0 0px 1000px darken(@brand-primary, 12%);
+        -webkit-text-fill-color: rgba(255,255,255,.75) !important;
+    }
+    &:focus:-webkit-autofill {
+        -webkit-box-shadow: inset 0 -5px 0 @brand-secondary, inset 0 1px 0 rgba(0,0,0,.2), inset 0 -1px 0 rgba(255,255,255,.2), inset 0 0 0px 1000px darken(@brand-primary, 15%);
+        -webkit-text-fill-color: rgba(255,255,255,.75) !important;
+    }
+}
+
+#page-login-index #loginbtn,
+#page-login-index .guestform input[type="submit"] {
+    padding: .75em;
+    margin: 0 0 1em 0;
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    background: lighten(@brand-primary, 3%);
+
+    &:hover,
+    &:focus {
+        background: darken(@brand-primary, 5%);
+    }
+
+    &:active {
+        background: darken(@brand-primary, 10%);
+    }
+}
+
+@media (min-width: @screen-md-min) {
+    .loginbox {
+        padding: 0 2em;
+    }
+}
+
+#page-login-index .loginbox.twocolumns .loginpanel {
+    float: none;
+    width: 100%;
+    margin: 0 auto 3em;
+    text-align: center;
+
+    @media (min-width: @screen-md-min) {
+        float: left;
+        width: 36%;
+    }
+}
+
+#page-login-index .loginbox.twocolumns .signuppanel {
+    float: none;
+    width: 100%;
+    margin: 0 auto 1em;
+    text-align: center;
+    left: 0;
+
+    @media (min-width: @screen-md-min) {
+        float: right;
+        width: 61%;
+        text-align: left;
+    }
+}
+
+#page-login-index .loginbox.twocolumns .signuppanel .subcontent {
+    padding: 0;
+    margin: 0;
+
+    @media (min-width: @screen-md-min) {
+            padding: 1em 0 0 0;
+        }
+}
+
+#page-login-index .twocolumns .signuppanel h1,
+#page-login-index .twocolumns .signuppanel h2,
+#page-login-index .twocolumns .signuppanel h3,
+#page-login-index .twocolumns .signuppanel h4,
+#page-login-index .twocolumns .signuppanel h5,
+#page-login-index .twocolumns .signuppanel h6 {
+    color: rgba(255,255,255,.8);
+}
+
+#page-login-index .twocolumns .signuppanel,
+#page-login-index .twocolumns .signuppanel p {
+    color: rgba(255,255,255,.7);
+}
+
+#page-login-index .twocolumns .signuppanel a {
+    color: rgba(255,255,255,.9);
+}
+
+#page-login-index .twocolumns .signuppanel a.btn {
+    color: #fff;
+    background: rgba(255,255,255,.2);
+    box-shadow: @totara110base-box-shadow-1;
+    padding: .75em 1.5em;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    box-sizing: border-box;
+}
+
+#page-login-index .twocolumns .signuppanel a.btn:hover,
+#page-login-index .twocolumns .signuppanel a.btn:focus {
+    background: rgba(255,255,255,.1);
+}

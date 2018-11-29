@@ -1,0 +1,93 @@
+// This file is part of Totara LMS
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+// @package   theme_totara110base
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @copyright 2015 Bas Brands <www.sonsbeekmedia.nl>
+// @author    Bas Brands
+// @author    David Scotson
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @author    Rob Tyler <rob.tyler@totaralearning.com>
+
+
+/*remove underline from flex-icon hover state*/
+a:hover .flex-icon,
+a:focus .flex-icon {
+    text-decoration: none;
+}
+
+.activityicon {
+    font-size: 1.4em;
+    margin: 0 .5em 0 0;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8em;
+    background: @brand-primary;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px @brand-secondary;
+}
+
+a.dimmed .activityicon.flex-icon,
+a.dimmed:link .activityicon.flex-icon,
+a.dimmed:visited .activityicon.flex-icon,
+.dimmed_text:visited .activityicon.flex-icon {
+    color: rgba(255,255,255,.6);
+    background: @brand-primary;
+}
+
+.activityicon .ft-stack-main {
+    top: 50%;
+    line-height: 0;
+}
+
+/*
+.activityicon[data-flex-icon="mod_assign|icon"] .ft-stack-main:before {
+    content: "\f0f8";
+}
+*/
+
+img.smallicon {
+    width: 16px;
+    height: 16px;
+}
+
+.choosercontainer #chooseform .option span.modicon img.icon {
+    height: 16px;
+    width: 16px;
+    padding: 1px 0 0 1px;
+    margin-left: -2px;
+    margin-right: 2px;
+}
+
+span.overrides-pix-icon.smallicon,
+span.overrides-pix-icon.icon {
+    display: none;
+}
+
+.totara110base-settings-replaceimgicons {
+    img.smallicon {
+        display: none;
+    }
+    span.overrides-pix-icon.smallicon {
+        display: inline-block;
+        margin-right: -4px;
+    }
+}
+
+//force file upload icon to be neutral gray
+.dndupload-arrow {
+    color: #bbb;
+}

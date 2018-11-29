@@ -1,0 +1,904 @@
+// This file is part of Totara LMS
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+// @package   theme_totara110base
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @copyright 2015 Bas themes <www.sonsbeekmedia.nl>
+// @author    Bas themes
+// @author    David Scotson
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @author    Rob Tyler <rob.tyler@totaralearning.com>
+
+
+// set color variables
+@theme-primary: #ab3434;
+@theme-secondary: darken(@theme-primary, 12%);
+@link-color: darken(@theme-primary, 5%);
+@link-hover-color: darken(@link-color, 15%);
+
+
+// link colors
+a,
+a:link,
+a:visited {
+    color: @link-color;
+
+    &:hover,
+    &:focus {
+        color: @link-hover-color;
+    }
+
+    &:active {
+        color: darken(@link-hover-color, 5%);
+    }
+}
+
+
+// button colors
+a.btn,
+.link-as-button,
+.btn-default,
+.btn-primary,
+button,
+button.yui3-button,
+input.form-submit,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input#id_submitbutton,
+input#id_submitbutton2,
+.path-admin .buttons input[type="submit"],
+td.submit input {
+    background-color: @theme-primary;
+    color: #fff;
+
+    &:hover,
+    &:focus {
+        background-color: darken(@theme-primary, 5%);
+        color: #fff;
+    }
+
+    &:active,
+    &:active:hover,
+    &:active:focus {
+        background-color: darken(@theme-primary, 10%);
+        color: #fff;
+    }
+}
+.btn-secondary {
+    background-color: darken(@theme-primary, 10%);
+    color: #fff;
+
+    &:hover,
+    &:focus {
+        background-color: darken(@theme-primary, 15%);
+        color: #fff;
+    }
+
+    &:active,
+    &:active:hover,
+    &:active:focus {
+        background-color: darken(@theme-primary, 20%);
+        color: #fff;
+    }
+}
+/*canel button styles*/
+#notice .singlebutton+.singlebutton input,
+.submit.buttons input[name="cancel"],
+input[name="cancel"],
+.btn-cancel {
+    .btn-secondary;
+}
+
+
+// selection colors
+::selection {
+    background: @theme-primary;
+}
+::-moz-selection {
+    background: @theme-primary;
+}
+
+
+// block colors
+.block .header .title h2:before,
+#page-footer .block .header .title h2:before {
+    color: @theme-primary;
+}
+.block.block_calendar_month td.today {
+    background-color: @theme-primary;
+}
+
+//system icon colors
+.activityicon {
+    background: @theme-primary;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px @theme-secondary;
+}
+a.dimmed .activityicon.flex-icon,
+a.dimmed:link .activityicon.flex-icon,
+a.dimmed:visited .activityicon.flex-icon,
+.dimmed_text:visited .activityicon.flex-icon {
+    background: @theme-primary;
+}
+.moodle-core-dragdrop-draghandle,
+.flex-icon.ft-state-info {
+    color: @theme-primary !important; /*important flag needed to override core style*/
+}
+
+
+//ui colors
+.form-input-style,
+textarea,
+textarea.form-control,
+input.form-control,
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+[type=text].form-control,
+[type=password].form-control,
+[type=email].form-control,
+[type=tel].form-control,
+[contenteditable].form-control,
+.form-item .form-setting>input[type="text"],
+.mform .fcontainer .fitem .felement>input[type="text"],
+.form-item .form-setting>input[type="password"],
+.mform .fcontainer .fitem .felement>input[type="password"],
+select,
+select.form-control,
+.mform .fitem .felement select,
+.mform .fitem .felement input[type="text"],
+.mform .fitem .felement input[type="password"],
+form select,
+form input[type="text"],
+form input[type="password"],
+form.atto_form input[type="url"],
+select.singleselect,
+.form-item .form-setting select,
+.form-item .form-setting input[type="text"],
+.form-item .form-setting input[type="password"],
+.block .singleselect select,
+.blogsearchform input[type="text"],
+.searchform input[type="text"] {
+    &:focus {
+        box-shadow: inset 0 -2px 0 @theme-primary;
+    }
+}
+
+input[type="radio"],
+.radio input[type="radio"],
+.radio-inline input[type="radio"] {
+    &:before {
+        background-color: @theme-primary;
+    }
+
+    &:checked:after {
+        border-color: @theme-primary;
+    }
+}
+
+input[type="checkbox"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+    &:focus:after {
+        border-color: @theme-primary;
+    }
+
+    &:checked:after {
+        background-color: @theme-primary;
+        border-color: @theme-primary;
+    }
+}
+
+.mform fieldset.collapsible legend a.fheader {
+    color: @theme-primary;
+
+    &:hover,
+    &:focus {
+        color: darken(@theme-primary,15%);
+    }
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd,
+.yui3-panel .yui3-panel-content div.yui3-widget-hd {
+    background: @theme-primary;
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h1,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h2,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h3,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h4,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h5,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h6 {
+    background: @theme-primary;
+}
+
+.moodle-dialogue-base .closebutton {
+    &:hover,
+    &:focus {
+        background: @theme-secondary;
+    }
+
+    &:active {
+        background: darken(@theme-secondary, 10%);
+    }
+}
+
+.custom-theme .ui-dialog .ui-dialog-titlebar {
+    background: @theme-primary;
+}
+
+.custom-theme .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+    &:hover,
+    &:focus {
+        background: @theme-secondary;
+    }
+
+    &:active {
+        background: darken(@theme-secondary, 10%);
+    }
+}
+
+.custom-theme .verticaltabtree-wrapper .verticaltabtree .nav.nav-tabs>li a {
+    &:hover,
+    &:focus {
+        box-shadow: inset 4px 0 0 @theme-secondary, inset 0 -1px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.75);
+    }
+
+    &:active {
+        box-shadow: inset 4px 0 0 @theme-secondary, inset 0 -1px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.75);
+    }
+}
+
+.custom-theme .verticaltabtree-wrapper .verticaltabtree .nav.nav-tabs>li.active a {
+    box-shadow: inset 4px 0 0 @theme-secondary;
+}
+
+.nav-tabs>li {
+    > a {
+        color: #555;
+
+        &:hover,
+        &:focus {
+            box-shadow: inset 0 -2px 0 @theme-primary;
+            color: #555;
+        }
+
+        &:active,
+        &:focus:active {
+            box-shadow: inset 0 -2px 0 @theme-secondary;
+            color: @theme-primary;
+        }
+    }
+
+    &.active>a,
+    &.active>a:hover,
+    &.active>a:focus {
+        box-shadow: inset 0 -2px 0 @theme-primary;
+        color: @theme-primary;
+    }
+}
+
+.box.message .messagearea .messagehistory .messagehistorytype {
+    a.visible {
+        color: #555;
+
+        &:hover,
+        &:focus {
+            box-shadow: inset 0 -2px 0 @theme-primary;
+            color: #555;
+        }
+
+        &:focus {
+            box-shadow: inset 0 -2px 0 @theme-primary;
+            color: @theme-primary;
+        }
+    }
+}
+
+#dialog-tabs {
+    .nav-tabs > li {
+        > a {
+            &:hover,
+            &:focus {
+                box-shadow: inset 0 -2px 0 @theme-primary;
+                color: #555;
+            }
+            &:focus {
+                box-shadow: inset 0 -2px 0 @theme-primary;
+                color: @theme-primary;
+            }
+        }
+
+        &.ui-tabs-active.ui-state-active a {
+            box-shadow: inset 0 -2px 0 @theme-primary;
+            color: @theme-primary;
+        }
+    }
+}
+
+.badge-primary,
+.label-primary {
+    background-color: @theme-primary;
+}
+
+.moodle-actionmenu[data-enhanced] .menubar .flex-icon {
+    color: @theme-primary;
+
+    &:hover,
+    &:focus {
+        color: darken(@theme-primary, 5%);
+    }
+
+    &:active {
+        color: darken(@theme-primary, 10%);
+    }
+}
+
+.moodle-actionmenu[data-enhanced].show .menu > li {
+    > a {
+        &.menu-action .flex-icon {
+            color: @theme-primary;
+        }
+
+        &:hover,
+        &:focus {
+            background: darken(@theme-primary, 5%);
+        }
+
+        &:active {
+            background: darken(@theme-primary, 10%);
+        }
+    }
+}
+
+
+//side panel colors
+#side-panel-button {
+    background: darken(@theme-primary, 10%);
+
+    &:hover,
+    &:focus {
+        background: darken(@theme-primary, 15%);
+    }
+
+    &:focus {
+        background: darken(@theme-primary, 15%);
+    }
+}
+#sidebar-block {
+    background: darken(@theme-primary, 15%);
+}
+#sidebar-block .block_action a {
+    .flex-icon {
+        color: lighten(@theme-primary, 5%);
+    }
+}
+#sidebar-block .block .moodle-actionmenu[data-enhanced].show .menu {
+    background: darken(@theme-primary, 15%);
+}
+#sidebar-block .block .moodle-actionmenu[data-enhanced].show .menu>li>a {
+    &.menu-action .flex-icon {
+        color: lighten(@theme-primary, 5%);
+    }
+    &:hover,
+    &:focus {
+        background: darken(@theme-primary, 5%);
+    }
+}
+#sidebar-block .block .header {
+    background-color: darken(@theme-primary, 20%);
+
+    h2:before {
+        color: lighten(@theme-primary, 5%);
+    }
+}
+#sidebar-block .block .content {
+    .flex-icon {
+        color: lighten(@theme-primary, 5%);
+    }
+}
+#sidebar-block .block #adminsearchquery {
+    background: darken(@theme-primary, 20%);
+
+    &:focus {
+        box-shadow: inset 0 1px 0 rgba(0,0,0,.4), inset 0 -2px 0 @theme-primary;
+    }
+}
+#totara-header-bar {
+    background: @theme-primary;
+}
+#totaramenu>ul>li.selected>a,
+#totaramenu>ul>li>a:hover,
+#totaramenu>ul>li>a:focus {
+    box-shadow: inset 0 -5px darken(@theme-primary, 10%);
+}
+#totaramenu ul ul li a:hover,
+#totaramenu ul ul li a:focus,
+#custommenu ul ul li a:hover,
+#custommenu ul ul li a:focus {
+    box-shadow: inset 0 -5px darken(@theme-primary, 10%);
+}
+.totara-menu-sidebar #totaramenu>ul>li.selected>a,
+.totara-menu-sidebar #totaramenu>ul>li>a:hover,
+.totara-menu-sidebar #totaramenu>ul>li>a:focus,
+.totara-menu-sidebar #custommenu>ul>li.selected>a,
+.totara-menu-sidebar #custommenu>ul>li>a:hover,
+.totara-menu-sidebar #custommenu>ul>li>a:focus {
+    box-shadow: inset 5px 0 0 @theme-primary;
+}
+
+
+//user colors
+.navbar-site .navbar-header.usermenu-wrap {
+    background: darken(@theme-primary, 10%);
+
+    @media only screen and (min-width : 768px) {
+        background-color: transparent;
+    }
+}
+.usermenu .textmenu:hover .usertext,
+.usermenu .textmenu:focus .usertext {
+    @media only screen and (min-width : 768px) {
+        color: @theme-primary;
+    }
+}
+.usermenu .caret {
+    color: @theme-secondary;
+
+    @media only screen and (min-width : 768px) {
+        color: @theme-primary;
+    }
+}
+.usermenu .moodle-actionmenu[data-enhanced].show .menu {
+    background-color: @theme-primary;
+
+    @media only screen and (min-width : 768px) {
+        background-color: @theme-primary;
+    }
+}
+.usermenu .moodle-actionmenu[data-enhanced].show .menu > li > a {
+
+    &.menu-action .flex-icon {
+        color: #fff;
+    }
+
+    &:hover,
+    &:focus {
+        background: darken(@theme-primary, 5%);
+        box-shadow: inset 0 -5px darken(@theme-primary, 10%)
+    }
+
+    &:active {
+        background: darken(@theme-primary, 10%);
+        box-shadow: inset 0 -5px darken(@theme-primary, 13%)
+    }
+}
+
+
+// social icons color
+#sidebar-block .social-links {
+    background: darken(@theme-primary, 20%);
+}
+
+
+//login colors
+a.login-btn {
+    &:before {
+        color: darken(@theme-primary, 20%);
+    }
+
+    &:hover:before,
+    &:focus:before {
+        color: lighten(@theme-primary, 2%);
+    }
+}
+.notloggedin #totara-header-bar a.login-btn {
+    background: darken(@theme-primary, 5%);
+
+    &:hover,
+    &:focus {
+        background: darken(@theme-primary, 10%);
+    }
+
+    &:active {
+        background: darken(@theme-primary, 15%);
+    }
+}
+#page-login-index #sb-site {
+    background: radial-gradient(ellipse at center, lighten(@theme-primary, 7%) 0%, @theme-primary 66%, darken(@theme-primary, 15%) 100%);
+}
+#page-login-index .loginpanel {
+    @media only screen and (min-width : 768px) {
+        background: darken(@theme-primary, 3%);
+    }
+}
+#page-login-index .loginpanel > h2 {
+    @media only screen and (min-width : 992px) {
+        background: darken(@theme-primary, 10%);
+    }
+}
+#page-login-index input[type="checkbox"]:after,
+#page-login-index .checkbox input[type="checkbox"]:after,
+#page-login-index .checkbox-inline input[type="checkbox"]:after {
+    border: 2px solid darken(@theme-primary, 10%);
+}
+#page-login-index .ft-state-info {
+    color: darken(@theme-primary, 20%) !important; /*need important flag here to override core css*/
+}
+#page-login-index .loginbox .loginform .form-input input {
+    background: darken(@theme-primary, 10%);
+
+    &:focus,
+    &:active {
+        background: darken(@theme-primary, 15%);
+        box-shadow: inset 0 -5px 0 @theme-secondary;
+    }
+
+    /* override Chrome yellow autocomplete background color */
+    &:-webkit-autofill {
+        -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,.25), inset 0 -1px 0 rgba(255,255,255,.25), inset 0 0 0px 1000px darken(@theme-primary, 10%);
+    }
+}
+#page-login-index #loginbtn,
+#page-login-index .guestform input[type="submit"] {
+    background: lighten(@theme-primary, 3%);
+
+    &:hover,
+    &:focus {
+        background: darken(@theme-primary, 5%);
+    }
+
+    &:active {
+        background: darken(@theme-primary, 10%);
+    }
+}
+
+
+//frontpage colors
+.slider-wrapper {
+    background: @theme-primary;
+}
+.banner-title {
+    background: @theme-primary;
+
+    h1:after {
+        background-color: @theme-secondary;
+    }
+
+    @media only screen and (min-width : 768px) {
+        background-color: rgba(55,55,55,.9);
+    }
+}
+#action-blocks a.action {
+
+    button .fa {
+        color: darken(@theme-primary, 15%);
+    }
+
+    &:hover,
+    &:focus {
+        button {
+            background: darken(@theme-primary, 5%);
+
+            .fa {
+                color: #fff;
+            }
+        }
+    }
+
+    &:active {
+        button {
+            background: darken(@theme-primary, 10%);
+        }
+    }
+}
+.fp-section .block h2:after {
+    background-color: @theme-primary;
+}
+.hi-icon {
+    background: @theme-primary;
+
+    &:after {
+        box-shadow: 0 0 0 2px @theme-secondary;
+    }
+}
+a.action:hover .hi-icon-effect-1a .hi-icon .fa,
+a.action:focus .hi-icon-effect-1a .hi-icon .fa,
+a.action:active .hi-icon-effect-1a .hi-icon .fa {
+    color: darken(@theme-primary, 17%);
+}
+
+
+// page header color
+.breadcrumb-nav .breadcrumb li:first-of-type a:before {
+    color: @theme-primary;
+
+    &:hover,
+    &:focus {
+        color: darken(@theme-primary, 10%);
+    }
+
+    &:active {
+        color: darken(@theme-primary, 15%);
+    }
+}
+#page-header .singlebutton {
+
+    div:before {
+        color: @theme-primary;
+    }
+
+    input {
+        color: @link-color;
+
+        &:hover,
+        &:focus {
+            color: @link-hover-color;
+        }
+
+        &:active {
+            color: darken(@link-hover-color, 5%);
+        }
+    }
+}
+
+
+//general course colors
+.course_category_tree .content .coursebox .moreinfo a {
+    color: @theme-secondary;
+}
+.course_category_tree .content .coursebox .moreinfo a:hover,
+.course_category_tree .content .coursebox .moreinfo a:focus {
+    color: @theme-primary;
+}
+.pagelayout-frontpage #maincontent + h2:after,
+#frontpage-course-list>h2:after,
+#frontpage-category-combo>h2:after,
+#frontpage-category-names>h2:after {
+    background-color: @theme-primary;
+}
+
+
+// grid course color
+body.totara110base-settings-gridenhanced .course-content ul.gridicons li .icon_content {
+    background: @theme-primary;
+}
+
+
+//onetopic course colors
+body.totara110base-settings-onetopictabs .onetopic ul.nav-tabs li {
+    &.active a,
+    &.active a:hover,
+    &.active a:focus {
+        background: @theme-secondary;
+    }
+
+    a {
+        background: @theme-primary;
+        color: rgba(255,255,255,.9);
+
+        &:hover,
+        &:focus {
+            background: darken(@theme-primary, 10%);
+            color: #fff;
+        }
+    }
+}
+body.totara110base-settings-onetopicvertical .course-content .onetopic .nav-tabs li {
+    &.active a {
+        background: darken(@theme-primary, 5%);
+        box-shadow: inset 4px 0 0 darken(@theme-primary, 20%);
+
+        &:hover,
+        &:focus {
+            background: darken(@theme-primary, 5%);
+            box-shadow: inset 4px 0 0 darken(@theme-primary, 20%);
+        }
+    }
+
+    a {
+        background: @theme-primary;
+
+        &:hover,
+        &:focus {
+            background: lighten(@theme-primary, 5%);
+            box-shadow: inset 0 -1px 0 rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.05), inset 4px 0 0 darken(@theme-primary, 20%);
+        }
+
+        &:active {
+            background: darken(@theme-primary, 5%);
+        }
+    }
+}
+
+body.totara110base-settings-onetopicvertical .course-content .onetopic .nav-tabs + .nav-tabs {
+    li {
+        a {
+            background: transparent;
+
+            &:hover,
+            &:focus {
+                box-shadow: inset 0 -2px 0 @theme-secondary;
+            }
+
+            &:focus {
+                color: @theme-primary;
+            }
+        }
+
+        &.active a {
+            box-shadow: inset 0 -2px 0 @theme-secondary;
+            color: @theme-primary;
+        }
+    }
+}
+
+//quiz colors
+.path-mod-quiz {
+    .que .formulation a:not(.close):not(.btn),
+    .que .outcome a:not(.close):not(.btn),
+    .que .comment a:not(.close):not(.btn),
+    .que .formulation .alert-link,
+    .que .outcome .alert-link,
+    .que .comment .alert-link {
+        color: @link-color;
+        font-weight: 600;
+
+        &:hover,
+        &:focus {
+            color: @link-hover-color;
+        }
+    }
+    .que .info {
+        border-left-color: @theme-primary;
+    }
+}
+
+//footer colors
+#page-footer2 {
+    background-color: @theme-secondary;
+}
+#page-footer2 .footer-contact li:first-of-type {
+    color: @theme-secondary;
+}
+#page-footer2 .social-links a {
+    color: @theme-secondary;
+
+    &:hover,
+    &:focus {
+        color: darken(@theme-secondary, 10%);
+    }
+
+    &:active {
+        color: darken(@theme-secondary, 15%);
+    }
+}
+
+
+//scroll-to-top colors
+a.scrollToTop {
+    background: @theme-primary;
+
+    .fa {
+        color: @theme-secondary;
+    }
+
+    &:hover,
+    &:focus {
+        background: darken(@theme-primary, 10%);
+
+        .fa {
+            color: @theme-primary;
+        }
+    }
+
+    &:active {
+        background: darken(@theme-primary, 15%);
+    }
+}
+
+
+//REIN colors
+.custom-theme .ui-state-default,
+.custom-theme .ui-state-active,
+.custom-theme .ui-widget-content .ui-state-default,
+.custom-theme .ui-widget-content .ui-state-active {
+    background:  @theme-primary;
+}
+/* force rein button to match theme style */
+.custom-theme button.ui-button {
+    .btn-primary;
+
+    .ui-button-text {
+        padding: 0;
+    }
+}
+.custom-theme .ui-state-default {
+    a:hover,
+    a:focus {
+        background: lighten(@theme-primary, 5%);
+    }
+
+    a:active {
+        background: darken(@theme-primary, 5%);
+    }
+}
+.custom-theme .ui-state-active {
+    a,
+    a:link,
+    a:visited {
+        background: darken(@theme-primary, 5%);
+    }
+}
+.custom-theme .ui-tabs .ui-tabs-nav li {
+    &.ui-tabs-selected,
+    &.ui-tabs-active {
+        background: @theme-primary;
+    }
+}
+@media only screen and (min-width : 992px) {
+    .custom-theme .tabs-vertical ul.ui-tabs-nav:before {
+        background: @theme-primary;
+    }
+}
+.custom-theme .tabs-arrows .ui-tabs-nav li {
+    a.ui-tabs-anchor {
+        background: @theme-primary;
+
+        &:hover,
+        &:focus {
+            background: lighten(@theme-primary, 5%);
+
+            &:after {
+                border-left-color: lighten(@theme-primary, 5%);
+            }
+        }
+
+        &:active {
+            background: darken(@theme-primary, 5%);
+
+            &:after {
+                border-left-color: darken(@theme-primary, 5%);
+            }
+        }
+
+        &:before {
+            border-color: transparent transparent transparent lighten(@theme-primary, 5%);
+        }
+
+        &:after {
+            border-left-color: @theme-primary;
+        }
+    }
+
+    &.ui-state-active a {
+        background:  darken(@theme-primary, 5%);
+
+        &:after {
+            border-left-color: darken(@theme-primary, 5%);
+        }
+    }
+}
+.custom-theme .do-stepwise .arrow {
+    border-color: @theme-primary transparent transparent transparent;
+}
+.custom-theme .do-multi-drop .ui-droppable {
+    border: solid 10px @theme-primary;
+}
+.custom-theme .flip-book-wrap {
+    background: @theme-primary;
+}

@@ -1,0 +1,146 @@
+// This file is part of Totara LMS
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+// @package   theme_totara110base
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @copyright 2015 Bas Brands <www.sonsbeekmedia.nl>
+// @author    Bas Brands
+// @author    David Scotson
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @author    Rob Tyler <rob.tyler@totaralearning.com>
+
+
+.keyimage {
+    margin: 10px 0;
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: height .2s ease-out;
+
+    &.closed {
+        height: 0 !important;
+    }
+}
+
+.keyimage#bannerkeyimage1,
+.keyimage#bannerkeyimage2,
+.keyimage#bannerkeyimage3,
+.keyimage#bannerkeyimage4 {
+    background-image: url(../pix/settings/banner-key.png);
+    height: 150px;
+}
+
+.keyimage#blockkeyimage1,
+.keyimage#blockkeyimage2,
+.keyimage#blockkeyimage3 {
+    background-image: url(../pix/settings/block-key.png);
+    height: 192px;
+}
+
+.keyimage#coursecatkeyimage {
+    background-image: url(../pix/settings/course-catalog-key.png);
+    height: 233px;
+}
+
+.keyimage#quizlayoutkeyimage {
+    background-image: url(../pix/settings/quiz-layout-key.png);
+    height: 206px;
+}
+
+.keyimage#slideoutpanelkeyimage {
+    background-image: url(../pix/settings/slideout-panel-key.png);
+    height: 242px;
+}
+
+.keyimage#onetopickeyimage {
+    background-image: url(../pix/settings/onetopic-vertical-key.jpg);
+    height: 190px;
+}
+
+#admin-themecolor.form-item .form-description:after {
+    content: "";
+    display: block;
+    background: linear-gradient(to right, #00477F 0%, #00477F 33%, #000 33%, #7aaed3 33%, #7aaed3 66%, #000 66%, #fff 66%, #fff 100%);
+    width: 237px;
+    height: 40px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+#admin-themecolor.form-item.neutral-theme .form-description:after {
+    background: linear-gradient(to right, #333 0%, #333 33%, #000 33%, #777 33%, #777 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.red-theme .form-description:after {
+    background: linear-gradient(to right, #ab3434 0%, #ab3434 33%, #000 33%, #6e2222 33%, #6e2222 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.blue-theme .form-description:after {
+    background: linear-gradient(to right, #3b5998 0%, #3b5998 33%, #000 33%, #17233c 33%, #17233c 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.green-theme .form-description:after {
+    background: linear-gradient(to right, #15804d 0%, #15804d 33%, #000 33%, #006639 33%, #006639 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.purple-theme .form-description:after {
+    background: linear-gradient(to right, #7009B2 0%, #7009B2 33%, #000 33%, #58068C 33%, #58068C 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.graygreen-theme .form-description:after {
+    background: linear-gradient(to right, #272829 0%, #272829 33%, #000 33%, #40c297 33%, #40c297 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.grayred-theme .form-description:after {
+    background: linear-gradient(to right, #2f2f2f 0%, #2f2f2f 33%, #000 33%, #cb4040 33%, #cb4040 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.bluegold-theme .form-description:after {
+    background: linear-gradient(to right, #00274c 0%, #00274c 33%, #000 33%, #ffcb05 33%, #ffcb05 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.blueorange-theme .form-description:after {
+    background: linear-gradient(to right, #00274c 0%, #00274c 33%, #000 33%, #da712d 33%, #da712d 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.bluered-theme .form-description:after {
+    background: linear-gradient(to right, #00477f 0%, #00477f 33%, #000 33%, #ab3434 33%, #ab3434 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.blackgold-theme .form-description:after {
+    background: linear-gradient(to right, #2f2f2f 0%, #2f2f2f 33%, #000 33%, #d2b887 33%, #d2b887 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.blackyellow-theme .form-description:after {
+    background: linear-gradient(to right, #2f2f2f 0%, #2f2f2f 33%, #000 33%, #ffb612 33%, #ffb612 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.purplegold-theme .form-description:after {
+    background: linear-gradient(to right, #461d7c 0%, #461d7c 33%, #000 33%, #fdd023 33%, #fdd023 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.greengold-theme .form-description:after {
+    background: linear-gradient(to right, #17674f 0%, #17674f 33%, #000 33%, #ffc425 33%, #ffc425 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.maroongold-theme .form-description:after {
+    background: linear-gradient(to right, #7a0019 0%, #7a0019 33%, #000 33%, #ffcc33 33%, #ffcc33 66%, #000 66%, #fff 66%, #fff 100%);
+}
+
+#admin-themecolor.form-item.earth-theme .form-description:after {
+    background: linear-gradient(to right, #493932 0%, #493932 33%, #000 33%, #4f6339 33%, #4f6339 66%, #000 66%, #fff 66%, #fff 100%);
+}

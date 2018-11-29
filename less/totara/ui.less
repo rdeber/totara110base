@@ -1,0 +1,777 @@
+// This file is part of Totara LMS
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+// @package   theme_totara110base
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @copyright 2015 Bas Brands <www.sonsbeekmedia.nl>
+// @author    Bas Brands
+// @author    David Scotson
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @author    Rob Tyler <rob.tyler@totaralearning.com>
+
+// Text ======================================================================
+a,
+a:link,
+a:visited {
+    font-weight: 600;
+}
+
+::selection {
+    background: @brand-primary;
+    color: #fff;
+}
+
+::-moz-selection {
+    background: @brand-primary;
+    color: #fff;
+}
+
+// make links inside of headers normal weight by default
+h1 a,
+h1 a:link,
+h1 a:visited,
+h2 a,
+h2 a:link,
+h2 a:visited,
+h3 a,
+h3 a:link,
+h3 a:visited,
+h4 a,
+h4 a:link,
+h4 a:visited,
+h5 a,
+h5 a:link,
+h5 a:visited,
+h6 a,
+h6 a:link,
+h6 a:visited {
+    font-weight: normal;
+}
+
+
+// Forms ======================================================================
+.form-input-style,
+textarea,
+textarea.form-control,
+input.form-control,
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+[type=text].form-control,
+[type=password].form-control,
+[type=email].form-control,
+[type=tel].form-control,
+[contenteditable].form-control,
+.form-item .form-setting>input[type="text"],
+.mform .fcontainer .fitem .felement>input[type="text"],
+.form-item .form-setting>input[type="password"],
+.mform .fcontainer .fitem .felement>input[type="password"],
+select,
+select.form-control,
+.mform .fitem .felement select,
+.mform .fitem .felement input[type="text"],
+.mform .fitem .felement input[type="password"],
+form select,
+form input[type="text"],
+form input[type="password"],
+form.atto_form input[type="url"],
+select.singleselect,
+.form-item .form-setting select,
+.form-item .form-setting input[type="text"],
+.form-item .form-setting input[type="password"],
+.block .singleselect select,
+.blogsearchform input[type="text"],
+.searchform input[type="text"] {
+    border-radius: 0;
+    border: 1px solid #eaeaea;
+    box-shadow: inset 0 -1px 0 #eaeaea;
+    padding: .25em .5em .25em;
+
+    &:focus {
+        box-shadow: inset 0 -2px 0 @brand-primary;
+        outline: none;
+        border: 1px solid #eaeaea;
+    }
+
+}
+
+/*add svg arrows to select elements*/
+select,
+select.form-control,
+.mform .fitem .felement select,
+form select,
+select.singleselect,
+.block .singleselect select,
+.form-item .form-setting select {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAJ1BMVEVmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmaP/QSjAAAADHRSTlMAAgMJC0uWpKa6wMxMdjkoAAAANUlEQVR4AeXJyQEAERAAsNl7Hf3X6xt0QL6JpZWq30pdvdadme+0PMdzvHm8YThHcT1H7K0BtOMDniZhWOgAAAAASUVORK5CYII=);
+    background-repeat: no-repeat;
+    padding: 0 1.5em 0 .5em;
+
+    &:focus {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAJ1BMVEUhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISF8S9ewAAAADHRSTlMAAgMJC0uWpKa6wMxMdjkoAAAANUlEQVR4AeXJyQEAERAAsNl7Hf3X6xt0QL6JpZWq30pdvdadme+0PMdzvHm8YThHcT1H7K0BtOMDniZhWOgAAAAASUVORK5CYII=);
+        background-repeat: no-repeat;
+        outline: none;
+    }
+
+    &[multiple] {
+        background: none;
+    }
+
+}
+
+/*moodle form overrides*/
+.mform fieldset {
+    padding: 0 0 .75em;
+}
+
+.mform fieldset legend {
+    border-bottom: 1px solid #eaeaea;
+}
+
+.mform fieldset.collapsible legend a.fheader {
+    font-size: .9em;
+    color: @brand-primary;
+    font-weight: 600;
+
+    &:hover,
+    &:focus {
+        color: darken(@brand-primary,15%);
+    }
+}
+
+.mform fieldset .fcontainer {
+    margin: 1em 0 1.5em 1em;
+}
+
+legend,
+#adminsettings h3,
+.backup-restore .backup-section>h2.header,
+.backup-restore .backup-section .backup-sub-section h3 {
+    margin-bottom: .5em;
+}
+
+.form-horizontal .form-group,
+.path-mod-feedback .feedback_item_box_left,
+.mform .fitem, .form-item,
+.fitem>fieldset>legend {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+textarea {
+    max-width: 100%;
+}
+
+// Boxes ======================================================================
+.generalbox,
+.admin .generalbox,
+#intro.generalbox,
+.generaltable,
+.sitetopiccontent,
+.categorybox,
+.categoryboxcontent,
+.coursebox,
+.notifyproblem,
+.notifysuccess,
+#adminsettings fieldset,
+.appraisal-stage,
+.userprofile .profile_tree section {
+    .totara110base-box;
+    background: #fff;
+    margin: 1em 0;
+    padding: 1em;
+}
+
+/*simplify nested box stlyes*/
+.generalbox .generalbox,
+.admin .generalbox .generalbox,
+#intro.generalbox .generalbox,
+.generaltable .generalbox,
+.sitetopiccontent .generalbox,
+.categorybox .generalbox,
+.categoryboxcontent .generalbox,
+.coursebox .generalbox,
+.notifyproblem .generalbox,
+.notifysuccess .generalbox,
+#adminsettings fieldset .generalbox,
+.appraisal-stage .generalbox,
+.userprofile .profile_tree section .generalbox {
+    box-shadow: none;
+    border: 1px solid #eaeaea;
+    padding: .5em .75em;
+    background: #f8f8f8;
+}
+
+#notice {
+    margin: 1em auto;
+}
+
+.courses .coursebox.odd,
+.courses .coursebox.odd:hover,
+.courses .coursebox.even,
+.courses .coursebox.even:hover {
+    background: #fff;
+}
+
+
+// Dialog boxes ======================================================================
+.moodle-dialogue-base .moodle-dialogue-lightbox {
+    background-color: #111;
+    opacity: .6;
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap {
+    .totara110base-box;
+    box-shadow: @totara110base-box-shadow-3;
+    overflow: hidden;
+}
+
+.moodle-dialogue-base .moodle-dialogue .moodle-dialogue-bd {
+    padding: 1em;
+    line-height: 1.5;
+    color: #555;
+    font-size: 1em;
+}
+
+.yui3-panel .yui3-panel-content div.yui3-widget-hd {
+    background: @brand-primary;
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd.yui3-widget-hd {
+    background: @brand-primary;
+    background-image: none;
+    letter-spacing: -.01em;
+    border: none;
+    border-radius: @border-radius-base @border-radius-base 0 0;
+    filter: none;
+    margin: 0;
+    padding: .5em 2.25em .4em;
+    overflow: hidden;
+    line-height: 1.1;
+    font-size: 1.1em;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    text-shadow: none;
+    color: #fff;
+    min-height: 2em;
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h1,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h2,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h3,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h4,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h5,
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd h6 {
+    text-align: center;
+    background: @brand-primary;
+    padding: 0;
+    margin: 0;
+    line-height: 1.1;
+    font-size: 1em;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    text-shadow: none;
+    color: #fff;
+}
+
+.moodle-dialogue-base .moodle-dialogue-wrap .moodle-dialogue-hd .yui3-widget-buttons {
+    padding: 0;
+}
+
+.moodle-dialogue-base .closebutton {
+    background-image: none;
+    background: transparent;
+    box-shadow: none;
+    min-height: 2em;
+    min-width: 2em;
+    margin: 0;
+
+    &:hover,
+    &:focus {
+        background: @brand-secondary;
+        border-radius: 0;
+    }
+
+    &:active {
+        background: darken(@brand-secondary, 10%);
+    }
+
+    &:before {
+        font-family: FontAwesome;
+        content: "\f00d";
+        color: #fff;
+        font-weight: normal;
+    }
+}
+
+.moodle-dialogue .mform .fdescription.required {
+    text-align: left;
+}
+
+.moodle-dialogue .mform fieldset .fcontainer {
+    margin: 0;
+}
+/* END moodle dialog box styles */
+
+
+/* ui-dialog box styles (this stuff also effects rein...)*/
+.custom-theme .ui-dialog {
+    .totara110base-box;
+    box-shadow: @totara110base-box-shadow-3;
+    padding: 0;
+    z-index: 100;
+
+    .ui-tabs .ui-tabs-nav {
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .ui-dialog-titlebar {
+        background: @brand-primary;
+        padding: .75em 2.25em 0;
+        line-height: 1.1;
+        border-radius: 0;
+        border: none;
+        overflow: hidden;
+        min-height: 2.5em;
+        text-align: center;
+
+        .ui-dialog-title {
+            font-family: @font-family-sans-serif-2;
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold !important;
+            text-transform: uppercase;
+            margin: 0;
+            border: none;
+
+            h2 {
+                font-family: @font-family-sans-serif-2;
+                color: #fff;
+                font-size: 1em;
+                font-weight: bold !important;
+                text-transform: uppercase;
+                margin: 0;
+            }
+        }
+
+        .ui-dialog-titlebar-close {
+            right: 0;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            min-width: 2.5em;
+            height: 2.5em;
+            text-align: center;
+
+            &:hover,
+            &:focus {
+                background: @brand-secondary;
+                border-radius: 0;
+            }
+
+            &:active {
+                background: darken(@brand-secondary, 10%);
+            }
+
+            &:before {
+                font-family: FontAwesome;
+                content: "\f00d";
+                vertical-align: top;
+                color: #fff;
+                font-weight: normal;
+                width: 1em;
+                height: 1em;
+                font-size: 1.2em;
+                line-height: 1.2em;
+            }
+        }
+    }
+
+    .ui-dialog-content {
+        padding: 1em;
+    }
+}
+
+.custom-theme .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-button-icon-primary {
+    display: none;
+
+    + .ui-button-text {
+        clip: rect(1px,1px,1px,1px);
+        position: absolute!important;
+        height: 1px!important;
+        width: 1px!important;
+        overflow: hidden;
+        padding: 0;
+    }
+}
+
+
+// Tables ======================================================================
+.generaltable,
+.totaratable {
+    padding: .5em;
+    border: none;
+    overflow: hidden;
+}
+
+.totara-table-container {
+    border: none;
+    overflow: visible;
+}
+
+table thead tr th.header,
+table thead tr th.header a {
+    font-family: @font-family-sans-serif-2;
+    color: @headings-color;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.path-rating .ratingtable>thead>tr>th,
+table.flexible>thead>tr>th,
+.generaltable>thead>tr>th,
+.path-rating .ratingtable>tbody>tr>th,
+table.flexible>tbody>tr>th,
+.generaltable>tbody>tr>th,
+.path-rating .ratingtable>tfoot>tr>th,
+table.flexible>tfoot>tr>th,
+.generaltable>tfoot>tr>th,
+.path-rating .ratingtable>thead>tr>td,
+table.flexible>thead>tr>td,
+.generaltable>thead>tr>td,
+.path-rating .ratingtable>tbody>tr>td,
+table.flexible>tbody>tr>td,
+.generaltable>tbody>tr>td,
+.path-rating .ratingtable>tfoot>tr>td,
+table.flexible>tfoot>tr>td,
+.generaltable>tfoot>tr>td {
+    border-color: #eaeaea;
+}
+
+.path-rating .ratingtable>tbody>tr:nth-of-type(odd),
+table#explaincaps>tbody>tr:nth-of-type(odd),
+table#defineroletable>tbody>tr:nth-of-type(odd),
+table.grading-report>tbody>tr:nth-of-type(odd),
+table#listdirectories>tbody>tr:nth-of-type(odd),
+table.rolecaps>tbody>tr:nth-of-type(odd),
+table.userenrolment>tbody>tr:nth-of-type(odd),
+table#form>tbody>tr:nth-of-type(odd),
+form#movecourses table>tbody>tr:nth-of-type(odd),
+#page-admin-course-index .editcourse>tbody>tr:nth-of-type(odd),
+.forumheaderlist>tbody>tr:nth-of-type(odd),
+table.flexible>tbody>tr:nth-of-type(odd),
+.generaltable>tbody>tr:nth-of-type(odd) {
+    background-color: #fafafa;
+
+    &:hover {
+        background-color: #f5f5f5;
+    }
+}
+
+
+// Tabtree ======================================================================
+.custom-theme .verticaltabtree-wrapper {
+    .totara110base-box;
+    padding: 0;
+    margin: 1em 0;
+    overflow: hidden;
+}
+
+.custom-theme .verticaltabtree-wrapper * {
+    box-sizing: border-box;
+}
+
+.custom-theme .verticaltabtree {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: @screen-md-min) {
+        float: left;
+        width: 25%;
+        z-index: 2;
+    }
+}
+
+.custom-theme .verticaltabtree-content {
+    padding: 1em 2em;
+    margin: 0;
+    border: none;
+
+    @media (min-width: @screen-md-min) {
+        float: right;
+        width: 75%;
+        box-shadow: -555px 0 0 #f5f5f5;
+        z-index: 1;
+    }
+}
+
+#page-admin-elementlibrary-verticaltabs .tabtree {
+    margin-right: 0;
+}
+
+.custom-theme .verticaltabtree .tabtree ul {
+    border: none;
+
+}
+
+.custom-theme .verticaltabtree .tabtree li {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-theme .verticaltabtree .tabtree li.selected,
+.custom-theme .verticaltabtree .tabtree li.active {
+    border-right: none;
+}
+
+.custom-theme .verticaltabtree-wrapper .verticaltabtree .nav.nav-tabs>li a {
+    padding: .75em 1em;
+    background-color: #f5f5f5;
+    border-radius: 0;
+    box-shadow: inset 0 -1px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.75);
+
+    &:hover,
+    &:focus {
+        background-color: #fff;
+        box-shadow: inset 4px 0 0 @brand-secondary, inset 0 -1px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.75);
+    }
+    &:active {
+        border: none;
+        box-shadow: inset 4px 0 0 @brand-secondary, inset 0 -1px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.75);
+    }
+}
+
+.custom-theme .verticaltabtree-wrapper .verticaltabtree .nav.nav-tabs>li.active a {
+    border: none;
+    box-shadow: inset 4px 0 0 @brand-secondary;
+}
+
+.custom-theme .verticaltabtree-wrapper .verticaltabtree .nav.nav-tabs>li:last-of-type a {
+    box-shadow: none;
+}
+
+.custom-theme .verticaltabtree-wrapper .verticaltabtree .nav.nav-tabs>li.selected a,
+.custom-theme .verticaltabtree-wrapper .verticaltabtree .nav.nav-tabs>li.selected a:hover,
+.custom-theme .verticaltabtree-wrapper .verticaltabtree .nav.nav-tabs>li.selected a:focus,
+.custom-theme .verticaltabtree-wrapper .verticaltabtree .nav.nav-tabs>li.active a,
+.custom-theme .verticaltabtree-wrapper .verticaltabtree .nav.nav-tabs>li.active a:hover,
+.custom-theme .verticaltabtree-wrapper .verticaltabtree .nav.nav-tabs>li.active a:focus {
+    border: none;
+    background-color: #fff;
+}
+
+.custom-theme .verticaltabtree ul.nav {
+    margin-bottom: 0;
+}
+
+.custom-theme .verticaltabtree .tabtree ul li a.nolink,
+.custom-theme .verticaltabtree .tabtree ul li a.nolink:hover,
+.custom-theme .verticaltabtree .tabtree ul li a.nolink:focus {
+    background-color: #eee;
+}
+
+
+// nav-tabs ======================================================================
+.nav-tabs>li {
+    >a {
+        color: #555;
+
+        &:hover,
+        &:focus {
+            box-shadow: inset 0 -2px 0 @brand-primary;
+            color: #555;
+        }
+    }
+
+    &.active>a,
+    &.active>a:hover,
+    &.active>a:focus {
+        box-shadow: inset 0 -2px 0 @brand-primary;
+        color: @brand-primary;
+    }
+}
+
+
+// dialog-tabs ======================================================================
+#dialog-tabs {
+
+    .nav-tabs > li {
+        background: transparent;
+        margin: 0;
+        padding: 0;
+
+        > a {
+            font-family: @font-family-sans-serif;
+            text-transform: none;
+            color: #555;
+            background: transparent;
+            box-shadow: inset 0 -1px 0 #ddd;
+            outline: none;
+
+            &:hover,
+            &:focus {
+                box-shadow: inset 0 -2px 0 @brand-primary;
+                color: #555;
+            }
+
+            &:focus {
+                box-shadow: inset 0 -2px 0 @brand-primary;
+                color: @brand-primary;
+            }
+        }
+
+        &.ui-tabs-active.ui-state-active a {
+            box-shadow: inset 0 -2px 0 @brand-primary;
+            color: @brand-primary;
+            border: none;
+        }
+    }
+
+    #search-tab,
+    #browse-tab {
+        box-shadow: none;
+        border: none;
+    }
+}
+
+
+// Moodle action menu ======================================================================
+/*need to investigate this animation a bit more...*/
+@keyframes showNav {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes hideNav {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+.moodle-actionmenu[data-enhanced] {
+
+    ul.menubar {
+        line-height: initial;
+    }
+
+    &.show {
+        .menu {
+            color: #fff;
+            background-color: #fff;
+            border: none;
+            text-align: left;
+            left: 0;
+            top: 100% !important; /*important needed here to ensure proper positioning of popup*/
+            margin: 0;
+            padding: 0;
+            min-width: 150px;
+            box-shadow: @totara110base-box-shadow-2;
+            overflow: hidden;
+            animation: showNav .3s ease both;
+        }
+
+        .ft-stack-suffix {
+            display: none;
+        }
+    }
+}
+
+.moodle-actionmenu[data-enhanced] .menubar .flex-icon {
+    color: @brand-primary;
+
+    &:hover,
+    &:focus {
+        color: darken(@brand-primary, 5%);
+    }
+
+    &:active {
+        color: darken(@brand-primary, 10%);
+    }
+}
+
+.moodle-actionmenu[data-enhanced].show .menu > li {
+    box-shadow: 0px 1px 0px rgba(255,255,255,.05) inset, 0px -1px 0px rgba(0,0,0,.1) inset;
+
+    &:first-of-type {
+        box-shadow: 0px -1px 0px rgba(0,0,0,.15) inset;
+    }
+
+    .filler {
+        display: none;
+    }
+
+    > a {
+        font-weight: 600;
+        padding: 1em .75em 1em .5em;
+
+        &.menu-action .flex-icon {
+            color: @brand-primary;
+            font-size: 1.3em;
+            margin-right: .1em;
+            vertical-align: bottom;
+        }
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            background: darken(@brand-primary, 5%);
+            text-decoration: none;
+            outline: none;
+
+            &.menu-action .flex-icon {
+                color: #fff;
+            }
+        }
+
+        &:active {
+            color: #fff;
+            background: darken(@brand-primary, 10%);
+        }
+    }
+}
+
+
+
+// Fixes for core Bootstrap elements =====================================
+
+// AMT-228 - fix conflict with bootstrap modal elements and side panel.
+body.modal-open #sb-site {
+    position: static;
+}
+
+// Override close button styles.
+.close {
+    background: transparent;
+    box-shadow: none;
+    font-size: 3em;
+    font-weight: normal;
+    color: #555;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:hover:active {
+        background: transparent;
+        box-shadow: none;
+        color: #111;
+    }
+}

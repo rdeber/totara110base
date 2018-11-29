@@ -1,0 +1,194 @@
+// This file is part of Totara LMS
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+// @package   theme_totara110base
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @copyright 2015 Bas Brands <www.sonsbeekmedia.nl>
+// @author    Bas Brands
+// @author    David Scotson
+// @author    Joby Harding <joby.harding@totaralearning.com>
+
+
+.navbar-site > div.header-wrap {
+    position: relative;
+    padding: 0;
+}
+
+.navbar-site .navbar-header.usermenu-wrap {
+    position: static;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background: darken(@brand-primary, 10%);
+
+    @media (min-width: @screen-sm-min) {
+        background: transparent;
+        float: none;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: auto;
+    }
+}
+
+.notloggedin .usermenu {
+    display: none;
+}
+
+.navbar-header .usermenu {
+    background: transparent;
+    width: 100%;
+    margin: .25em 0;
+    padding: 0;
+    display: none;
+
+    @media (min-width: @screen-sm-min) {
+        width: auto;
+        margin: 0;
+        display: block;
+    }
+}
+
+#totara-header-bar .usermenu {
+    display: block;
+    margin-top: .35em;
+
+    @media (min-width: @screen-sm-min) {
+        display: none;
+    }
+}
+
+.usermenu .toggle-display {
+    display: block;
+
+    .usertext {
+        font-weight: bold;
+        color: rgba(255,255,255,.8);
+        margin-top: 0.1em;
+
+        @media (min-width: @screen-sm-min) {
+            color: @gray;
+        }
+    }
+    &:hover,
+    &:focus {
+
+        .usertext {
+            color: rgba(255,255,255,1);
+
+             @media (min-width: @screen-sm-min) {
+                color: @brand-primary;
+            }
+        }
+    }
+}
+
+.usermenu .textmenu:hover .usertext,
+.usermenu .textmenu:focus .usertext {
+    color: rgba(255,255,255,1);
+
+     @media (min-width: @screen-sm-min) {
+        color: @brand-primary;
+    }
+}
+
+.usermenu .usertext .meta {
+    background: #777;
+}
+
+.usermenu .moodle-actionmenu .toggle-display .userbutton .avatars {
+    margin: 0 10px;
+}
+
+.usermenu .moodle-actionmenu .toggle-display .userbutton .avatars img {
+    max-width: 24px;
+    height: auto;
+
+     @media (min-width: @screen-sm-min) {
+        max-width: 100%;
+    }
+}
+
+.usermenu .caret {
+    color: @brand-secondary;
+    border-width: 6px;
+    margin: 0;
+
+    #totara-header-bar & {
+        color: rgba(255,255,255,.4);
+        border-width: 5px;
+    }
+}
+
+.usermenu .moodle-actionmenu[data-enhanced] .menubar {
+    padding: 0 1em;
+}
+
+.usermenu .moodle-actionmenu[data-enhanced].show .menu {
+    padding: 0;
+    margin: 5px 0 0 0;
+    color: #fff;
+    background-color: @brand-primary;
+    box-shadow: @totara110base-box-shadow-2;
+    border-radius: 0;
+    border: none;
+    text-align: left;
+    left: 0;
+    margin-top: 0;
+    min-width: 100px;
+
+    @media (min-width: @screen-sm-min) {
+        background-color: @brand-primary;
+        margin-top: 5px;
+    }
+}
+
+.usermenu .moodle-actionmenu[data-enhanced].show .menu > li {
+    box-shadow: 0px 1px 0px rgba(255,255,255,.1) inset, 0px -1px 0px rgba(0,0,0,.15) inset;
+
+    &:first-of-type {
+        box-shadow: 0px -1px 0px rgba(0,0,0,.15) inset;
+    }
+
+    .filler {
+        display: none;
+    }
+
+    > a {
+        color: #fff;
+        font-weight: 600;
+        padding: 1em;
+
+        &.menu-action .flex-icon {
+            color: @brand-secondary;
+            font-size: 1.3em;
+            margin-right: .2em;
+        }
+
+        &:hover,
+        &:focus {
+            background: darken(@brand-primary, 5%);
+            box-shadow: inset 0 -5px @brand-secondary;
+            text-decoration: none;
+            outline: none;
+        }
+
+        &:active {
+            background: darken(@brand-primary, 7%);
+        }
+    }
+}

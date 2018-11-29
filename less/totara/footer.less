@@ -1,0 +1,241 @@
+// This file is part of Totara LMS
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+// @package   theme_totara110base
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @copyright 2015 Bas Brands <www.sonsbeekmedia.nl>
+// @author    Bas Brands
+// @author    David Scotson
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @author    Rob Tyler <rob.tyler@totaralearning.com>
+
+
+//Footer Level 1
+/* collapses page footers if all block regions are empty */
+.empty-region-footer-one.empty-region-footer-two.empty-region-footer-three.empty-region-footer-four #page-footer,
+.empty-region-footer-one.empty-region-footer-two.empty-region-footer-three.empty-region-footer-four #page-footer aside {
+    padding: 0;
+    min-height: 0;
+}
+
+/* show footer block section when editing */
+body.editing #page-footer {
+    min-height: 100px !important;
+}
+
+#page-footer {
+    display: block;
+    background: #eee;
+    text-align: left;
+    margin: 0;
+    padding: 2em 0;
+    font-size: .9em;
+    border-top: 1px solid #e5e5e5;
+}
+
+#page-footer hr {
+    border-top: none;
+    border-bottom: none;
+}
+
+#page-footer ul {
+    margin-left: 0;
+}
+
+#page-footer ul,
+#page-footer li {
+    list-style: none;
+}
+
+#page-footer .block {
+    .totara110base-box;
+
+    @media (min-width: @screen-md-min) {
+        margin: 0;
+    }
+}
+
+#page-footer .block .header {
+    box-shadow: none;
+}
+
+#page-footer .block .header .title {
+    position: relative;
+}
+
+#page-footer .block .header .title h2 {
+    color: @headings-color;
+    font-size: 1.2em;
+    background: #f8f8f8;
+    box-shadow: none;
+    border: none;
+    font-weight: bold;
+    text-align: left;
+    padding: .5em;
+    border: 1px solid #eee;
+    border-radius: @border-radius-base;
+
+    @media (min-width: @screen-md-min) {
+        text-align: center;
+    }
+}
+
+#page-footer .block .header .title h2:before {
+    color: @brand-primary;
+    float: none;
+    clear: none;
+    display: inline-block;
+    margin-bottom: 0;
+    width: auto;
+    height: auto;
+}
+
+#page-footer .block_action {
+    position: absolute;
+    top: 25%;
+    right: 5px;
+}
+
+#page-footer .block .content {
+    padding-top: .5em;
+}
+
+
+//Footer Level 2
+/* collapses page footers if all block regions are empty */
+.empty-region-footer-four #page-footer2,
+.empty-region-footer-four #page-footer2 aside {
+    padding: 0;
+    min-height: 0;
+}
+
+/* show footer block section when editing */
+body.editing #page-footer2 {
+    min-height: 100px !important;
+}
+
+#page-footer2 {
+    background-color: darken(@brand-primary, 20%);
+    color: rgba(255,255,255,.8);
+    padding: 3em 1em 3em;
+    text-align: center;
+    font-size: 1em;
+}
+
+#page-footer2 a {
+    color: rgba(255,255,255,.9);
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+        color: rgba(255,255,255,1);
+    }
+}
+
+#page-footer2 .page-footer-loggedin-info {
+    padding: 1em;
+}
+
+#page-footer2 .block {
+    margin-bottom: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0px;
+    border: none;
+}
+
+#page-footer2 .block_action {
+    display: none;
+}
+
+#page-footer2 .block .header {
+    box-shadow: none;
+}
+
+#page-footer2 .block .header .title h2 {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+#page-footer2 .block .content,
+#page-footer2 .block .header .commands {
+    border: none;
+}
+
+#page-footer2 .block .content {
+    margin: 0;
+    padding: 0;
+}
+
+#page-footer2 .footer-contact ul {
+    margin: 0;
+    padding: 0;
+    color: rgba(255,255,255,.8);
+}
+
+#page-footer2 .footer-contact li {
+    list-style: none;
+}
+
+#page-footer2 .footer-contact li:first-of-type {
+    font-size: 1.1em;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: @brand-secondary;
+}
+
+#page-footer2 .footer-contact li strong {
+    color: rgba(255,255,255,.95);
+    text-transform: uppercase;
+}
+
+#page-footer2 .footer-contact p {
+    color: rgba(255,255,255,.6);
+    font-size: .9em;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+#page-footer2 .block .content img {
+    max-width: 250px;
+    margin-bottom: 1em;
+}
+
+#page-footer2 .social-links {
+    float: none;
+    margin: 0 auto 2em;
+    display: block;
+    clear: both;
+    font-size: 1.2em;
+}
+
+#page-footer2 .social-links a {
+    color: @brand-secondary;
+
+    &:hover,
+    &:focus {
+        color: darken(@brand-secondary, 10%);
+    }
+
+    &:active {
+        color: darken(@brand-secondary, 20%);
+    }
+}
+
+.footer-content .helplink {
+    margin: .25em 0;
+}

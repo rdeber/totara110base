@@ -1,0 +1,222 @@
+//
+// This file is part of Totara LMS
+//
+// Copyright (C) 2016 onwards Totara Learning Solutions LTD
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <ht    tp://www.gnu.org/licenses/>.
+//
+// @copyright 2016 onwards Totara Learning Solutions LTD
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @package   theme_basis
+
+
+#totara-header-bar {
+    background: @brand-primary;
+    box-shadow: @totara110base-box-shadow-1;
+    width: auto;
+    z-index: 2;
+    position: relative;
+    min-height: 34px;
+
+    /* Manage fixed position of header/slideout bar. */
+    &.position_fixed {
+        position: fixed !important;
+        bottom: auto !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+}
+
+.totara-navbar-container {
+    float: none;
+}
+
+.totara-navbar-container .container-fluid {
+    margin: 0;
+}
+
+#totara-navbar {
+    padding: 0;
+    margin: 0;
+}
+
+.totara-navbar {
+    display: block;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-site {
+    z-index: 2;
+}
+
+.navbar-nav {
+    float: none;
+    margin: 0;
+}
+
+.totara-menu-sidebar {
+    display: block;
+    margin-bottom: 1.5em;
+
+    &.hide-menu {
+        display: none;
+    }
+}
+
+#totara-menu-header {
+    display: block;
+    float: left;
+
+    &.hide-menu {
+        display: none;
+    }
+}
+
+#totaramenu > ul {
+    box-shadow: none;
+    min-height: 0;
+}
+
+#totaramenu > ul > li {
+    margin: 0 .2em 0;
+    width: auto;
+    float: left;
+
+    > a {
+        font-weight: 700;
+        font-size: 1em;
+        font-family: @font-family-sans-serif-2;
+        color: rgba(255,255,255,.85);
+        text-transform: uppercase;
+        padding: 8px 25px 6px;
+        border: none;
+        background: transparent;
+        display: block;
+        width: auto;
+    }
+
+    &.selected > a,
+    > a:hover,
+    > a:focus {
+        background: transparent;
+        color: #fff;
+        box-shadow: inset 0 -5px @brand-secondary;
+    }
+
+    .totara-menu-sidebar & {
+        float: left;
+        clear: left;
+        display: block;
+        width: 100%;
+        margin: 0;
+        box-shadow: 0px 1px 0px rgba(255,255,255,.1) inset, 0px -1px 0px rgba(0,0,0,.15) inset;
+
+        a {
+            border: none;
+            padding: .5em 1em;
+        }
+
+        &.selected > a,
+        > a:hover,
+        > a:focus {
+            box-shadow: inset 5px 0 0 @brand-secondary;
+            background: rgba(0,0,0,.15);
+        }
+    }
+}
+
+/* show/hide animation for drop down menu */
+#totara-menu-header .totara-menu-nav-item .totara-menu-nav-list {
+    display: none;
+    animation: hideNav .3s ease both;
+}
+#totara-menu-header .totara-menu-nav-item:hover .totara-menu-nav-list {
+    display: block;
+    animation: showNav .3s ease both;
+}
+
+/*drop down menu styles */
+#totaramenu ul ul {
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: absolute;
+    box-shadow: @totara110base-box-shadow-2;
+    background-color: #fff;
+    width: auto;
+    min-width: 200px;
+    min-height: 0;
+    z-index: 100;
+
+    li {
+        a {
+            padding: 1em 1.5em;
+            text-indent: 0;
+
+            &:hover,
+            &:focus {
+                box-shadow: inset 0 -5px @brand-secondary;
+                background: #fff;
+            }
+        }
+
+        &:last-of-type a {
+            border-bottom: none;
+        }
+    }
+
+    .totara-menu-sidebar & {
+        box-shadow: none;
+        background: transparent;
+        position: static;
+
+        li a {
+            color: rgba(255,255,255,.7);
+            padding: .5em 1.5em;
+            font-size: .9em;
+            text-indent: 0;
+
+            &:hover,
+            &:focus {
+                color: rgba(255,255,255,.95);
+                background: transparent;
+                box-shadow: none;
+            }
+        }
+
+        li.selected a {
+            color: rgba(255,255,255,.95);
+        }
+    }
+}
+
+//sidebar totara menu styles
+.totara-menu-sidebar .totara-navbar-container .container-fluid {
+    padding: 0;
+}
+.totara-menu-sidebar .totara-menu-nav-list .totara-menu-nav-list {
+    position: static;
+    display: block;
+    background: transparent;
+    box-shadow: none;
+}
+.totara-menu-sidebar .totara-menu-nav-list .totara-menu-nav-list .totara-menu-nav-item-link {
+    background: transparent;
+}

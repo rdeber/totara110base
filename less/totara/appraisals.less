@@ -1,0 +1,72 @@
+// This file is part of Totara LMS
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 3 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
+// @package   theme_totara110base
+// @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+// @copyright 2015 Bas Brands <www.sonsbeekmedia.nl>
+// @author    Bas Brands
+// @author    David Scotson
+// @author    Joby Harding <joby.harding@totaralearning.com>
+// @author    Rob Tyler <rob.tyler@totaralearning.com>
+
+
+.appraisal-stage {
+    text-align: center;
+
+    @media (min-width: @screen-md-min) {
+        text-align: left;
+    }
+}
+
+.custom-theme .appraisal-stageactions>* {
+    float: none;
+
+    @media (min-width: @screen-md-min) {
+        float: right;
+    }
+}
+
+.appraisal-stageactions input[type="submit"] {
+    width: auto;
+}
+
+.appraisal-stagetitle,
+.appraisal-stageinfo,
+.appraisal-stageactions {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    float: none;
+}
+
+@media (min-width: @screen-md-min) {
+    .appraisal-stagetitle,
+    .appraisal-stageinfo,
+    .appraisal-stageactions {
+        float: left;
+    }
+    .appraisal-stagetitle,
+    .appraisal-stageactions {
+        width: 19%;
+    }
+    .appraisal-stageinfo {
+        width: 60%;
+        margin: 0 1%;
+    }
+}
+
+.appraisal-stagetitle h3 {
+    margin: .25em 0;
+}
